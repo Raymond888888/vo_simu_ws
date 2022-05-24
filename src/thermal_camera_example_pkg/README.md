@@ -45,3 +45,21 @@ https://github.com/gazebosim/ros_gz.git    ign gazebo for ros
 
 ## sources 
 car_robot : https://www.ncnynl.com/archives/202201/4926.html
+
+
+## 调试日志
+
+
+2022.5.20
+运行成功，实现了： @todo
+
+2022.5.24
+将功能包迁移到vio_thermal_simu_ws包里，运行状态为：
+
+(noetic)roscore
+(noetic)ign gazebo -r src/thermal_camera_example_pkg/examples/worlds/car_robot.sdf
+(noetic)rosrun thermal_camera_example_pkg thermal_camera_example
+(noetic)rosrun thermal_camera_example_pkg orb_cv
+(noetic)rosrun teleop_twist_keyboard teleop_twist_keyboard.py
+
+此状态开始时图像没有任何延迟，一段时间后开始有明显延迟，此bug待解决

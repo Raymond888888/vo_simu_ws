@@ -57,8 +57,6 @@ void OnImage(const ignition::msgs::Image &_msg) {
     cv::imshow("result_win", Imageresult);
     cv::waitKey(1);
 
-    cv::Mat imagetest = cv::imread("/home/raymond/Pictures/test000001.png");
-    // sensor_msgs::ImagePtr msg = cv_bridge::CvImage(std_msgs::Header(), "bgr8", imagetest).toImageMsg();
     sensor_msgs::ImagePtr msg = cv_bridge::CvImage(std_msgs::Header(), "mono16",Imageresult).toImageMsg();
     msg->header.stamp = ros::Time::now();
     pubThermalImage.publish(msg);
