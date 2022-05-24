@@ -63,3 +63,4 @@ car_robot : https://www.ncnynl.com/archives/202201/4926.html
 (noetic)rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 
 此状态开始时图像没有任何延迟，一段时间后开始有明显延迟，此bug待解决
+再次观察发现igintion gazebo 也会卡，怀疑是igintion gazebo 本身的问题，因为imshow的原始图像和处理后的图像一致，延迟问题应该是出在订阅igntopic的图像接收阶段
