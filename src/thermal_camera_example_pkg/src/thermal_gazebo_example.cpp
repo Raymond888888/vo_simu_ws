@@ -70,7 +70,7 @@ int main(int argc, char **argv) {
         std::cerr << "Error subscribing to the thermal camera topic" << std::endl;
         return -1;
     }
-    std::cout << " test1 " << std::endl;
+    std::cout << " thermal_camera_example start! " << std::endl;
     ros::init(argc, argv, "thermal_camera_example_pkg");
     ros::NodeHandle rnh;
     image_transport::ImageTransport it(rnh);

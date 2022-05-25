@@ -177,7 +177,7 @@
         </light>
 
         <atmosphere type="adiabatic">
-            <temperature>300</temperature>
+            <temperature>295</temperature>
             <!--
               This is a more exaggerated temperature gradient, which produces a
               temperature range of ~11.5 kelvin for objects in the thermal camera
@@ -301,7 +301,7 @@
 
         <!-- VEHICLE/CAR -->
         <model name='vehicle_of_thermal_cam' canonical_link='chassis'>
-            <pose relative_to='world'>7 0 0 0 0 0</pose>
+            <pose relative_to='world'>10 0 100 0 0 3.14</pose>
             <!--the pose is relative to the world by default-->
 
             <link name='chassis'>
@@ -575,7 +575,7 @@
                     <cameraInfoTopicName>${camera_topic_name}/camera_info</cameraInfoTopicName>
                     <rawTemperatureTopicName>${camera_topic_name}/raw_temp_array</rawTemperatureTopicName>
                     <surroundingTemperature>20</surroundingTemperature>
-                    <maximalTemperature>150</maximalTemperature>
+                    <maximalTemperature>300</maximalTemperature>
                     <minimalTemperatureGreenColor>0.2</minimalTemperatureGreenColor>
                     <noiseStdDev>4.0</noiseStdDev>
                     <noiseStdDevMaxTemp>20.0</noiseStdDevMaxTemp>
@@ -636,7 +636,7 @@
         <!-- MRS attacteher plugin  -->
         <!-- <plugin name="mrs_gazebo_link_attacher_plugin" filename="libMRSGazeboLinkAttacherPlugin.so"/> -->
         <!-- <plugin name="mrs_gazebo_link_attacher_plugin" filename="/home/raymond/catkin_ws/devel/lib/libMRSGazeboLinkAttacherPlugin.so"/> -->
-        <include>
+        <!-- <include>
             <pose>1 0 0 0 0 1.570796</pose>
             <name>human_'rescue_randy'</name>
             <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Rescue Randy</uri>
@@ -652,6 +652,37 @@
             <pose>2.25 -.5 .1 0 0 1.570796</pose>
             <name>backpack</name>
             <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Backpack</uri>
+        </include> -->
+
+        <!-- @online{GazeboFuel-OpenRobotics-Rescue-Randy-Sitting,
+            title={Rescue Randy Sitting},
+            organization={Open Robotics},
+            date={2021},
+            month={February},
+            day={4},
+            author={OpenRobotics},
+            url={https://fuel.gazebosim.org/1.0/OpenRobotics/models/Rescue Randy Sitting},
+        } -->
+
+        <!-- <include>
+            <pose>4 -.5 .1 0 0 1.570796</pose>
+            <name>sitting</name>
+            <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Rescue Randy Sitting</uri>
+        </include> -->
+        <!-- @online{GazeboFuel-Pine-Fortress-island,
+        title={Fortress island},
+        organization={Open Robotics},
+        date={2022},
+        month={May},
+        day={4},
+        author={Pine},
+        url={https://fuel.gazebosim.org/1.0/Pine/models/Fortress island},
+        } -->
+        <include>
+            <pose>0 0 0 0 0 0</pose>
+            <name>island</name>
+            <uri>https://fuel.ignitionrobotics.org/1.0/Pine/models/Fortress island</uri>
         </include>
     </world>
+
 </sdf>
