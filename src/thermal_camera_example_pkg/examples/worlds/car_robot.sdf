@@ -187,7 +187,7 @@
             <temperature_gradient>0.1</temperature_gradient>
         </atmosphere>
 
-        <model name="ground_plane">
+        <!-- <model name="ground_plane">
             <static>true</static>
             <link name="link">
                 <collision name="collision">
@@ -211,9 +211,9 @@
                     </material>
                 </visual>
             </link>
-        </model>
+        </model> -->
 
-        <model name="box">
+        <!-- <model name="box">
             <pose>-1 1 0.5 0 0 0</pose>
             <link name="box_link">
                 <inertial>
@@ -251,9 +251,9 @@
                     </plugin>
                 </visual>
             </link>
-        </model>
+        </model> -->
 
-        <model name="thermal_camera_8bit">
+        <!-- <model name="thermal_camera_8bit">
             <pose>4.5 0 0.5 0.0 0.0 3.14</pose>
             <link name="link">
                 <pose>0.05 0.05 0.05 0 0 0</pose>
@@ -297,11 +297,11 @@
                 </sensor>
             </link>
             <static>true</static>
-        </model>
+        </model> -->
 
         <!-- VEHICLE/CAR -->
         <model name='vehicle_of_thermal_cam' canonical_link='chassis'>
-            <pose relative_to='world'>10 0 100 0 0 3.14</pose>
+            <pose relative_to='world'>1 -2 0.1 0 0 3.14</pose>
             <!--the pose is relative to the world by default-->
 
             <link name='chassis'>
@@ -679,7 +679,7 @@
         url={https://fuel.gazebosim.org/1.0/Pine/models/Fortress island},
         } -->
         <include>
-            <pose>0 0 0 0 0 0</pose>
+            <pose>0 0 0.1 0 0 0</pose>
             <name>island</name>
             <uri>https://fuel.ignitionrobotics.org/1.0/Pine/models/Fortress island</uri>
         </include>
