@@ -64,3 +64,7 @@ car_robot : https://www.ncnynl.com/archives/202201/4926.html
 
 此状态开始时图像没有任何延迟，一段时间后开始有明显延迟，此bug待解决
 再次观察发现igintion gazebo 也会卡，怀疑是igintion gazebo 本身的问题，因为imshow的原始图像和处理后的图像一致，延迟问题应该是出在订阅igntopic的图像接收阶段
+
+2022.5.27
+实现了用ignitiongazebo运行自己定义的world，下一步只需要丰富世界元素即可。
+TODO：撼地者无法出现在ign里面，待解决
