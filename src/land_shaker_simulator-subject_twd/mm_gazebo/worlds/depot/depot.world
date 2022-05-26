@@ -29,6 +29,7 @@
     </include>
 
     <include>
+      <pose>0 0 -0.1 0 0 0</pose>
       <uri>https://fuel.ignitionrobotics.org/1.0/MovAi/models/Warehouse</uri>
     </include>
 
