@@ -494,28 +494,26 @@
             </plugin>
         </model>
 
-        <model xmlns:xacro="http://ros.org/wiki/xacro"  name="tracked_vehicle">
+        <model xmlns:xacro="http://ros.org/wiki/xacro" name="tracked_vehicle">
 
-            <xacro:property name="left_offset_y" value="0.287" /> 
-            <xacro:property name="right_offset_y" value="-0.287" /> 
-            <xacro:property name="swing_offset_x" value="-0.479" /> 
-        
+            <xacro:property name="left_offset_y" value="0.287" />
+            <xacro:property name="right_offset_y" value="-0.287" />
+            <xacro:property name="swing_offset_x" value="-0.479" />
+
             <xacro:macro name="make_box_inertia" params="mass size_x size_y size_z">
                 <inertial>
                     <mass value="${mass}" />
-                    <inertia ixx="${mass * (size_y * size_y + size_z * size_z) / 12}" ixy="0" ixz="0" 
-                             iyy="${mass * (size_z * size_z + size_x * size_x) / 12}" iyz="0" 
-                             izz="${mass * (size_x * size_x + size_y * size_y) / 12}" />
+                    <inertia ixx="${mass * (size_y * size_y + size_z * size_z) / 12}" ixy="0" ixz="0" iyy="${mass * (size_z * size_z + size_x * size_x) / 12}" iyz="0" izz="${mass * (size_x * size_x + size_y * size_y) / 12}" />
                 </inertial>
             </xacro:macro>
-        
+
             <xacro:include filename="$(find thermal_camera_example_pkg)/urdf/tracked_base/single_track.urdf.xacro" />
             <xacro:include filename="$(find thermal_camera_example_pkg)/urdf/tracked_base/swing_arm.urdf.xacro" />
-        
-            <xacro:single_track prefix="left" offset_y="${left_offset_y}"/>
-            <xacro:single_track prefix="right" offset_y="${right_offset_y}"/>
-            <xacro:swing_arm mass="0.3" offset_x="${swing_offset_x}"/>
-        
+
+            <xacro:single_track prefix="left" offset_y="${left_offset_y}" />
+            <xacro:single_track prefix="right" offset_y="${right_offset_y}" />
+            <xacro:swing_arm mass="0.3" offset_x="${swing_offset_x}" />
+
             <gazebo reference="vehicle_ther_base_link">
                 <material>Gazebo/DarkGrey</material>
             </gazebo>
@@ -525,7 +523,7 @@
             <gazebo reference="pusher_visual_right">
                 <material>Gazebo/DarkGrey</material>
             </gazebo>
-        
+
             <link name="vehicle_ther_base_link">
                 <xacro:make_box_inertia mass="50" size_x="0.5" size_y="0.51" size_z="1" />
                 <visual name="vehicle_visual">
@@ -534,7 +532,7 @@
                         <!-- <mesh filename="package://meshes/vehicle/base_meter.STL" /> -->
                     </geometry>
                 </visual>
-        
+
                 <collision name="vehicle_collision">
                     <geometry>
                         <box size="0.4 0.4 0.1" />
@@ -542,19 +540,39 @@
                     </geometry>
                 </collision>
             </link>
-        
-            <!-- <joint name="left_track_joint" type="fixed">
+
+
+            <link name="left_body">
+                <!-- <xacro:make_box_inertia mass="50" size_x="0.5" size_y="0.51" size_z="1" />
+                <visual name="vehicle_visual">
+                    <geometry>
+                        <box size="0.4 0.4 0.1" />
+                    </geometry>
+                </visual>
+
+                <collision name="vehicle_collision">
+                    <geometry>
+                        <box size="0.4 0.4 0.1" />          
+                    </geometry>
+                </collision> -->
+            </link>
+
+
+            <joint name="left_track_joint" type="fixed">
                 <origin xyz="0 ${left_offset_y} 0" rpy="0 0 0" />
-                <parent link="vehicle_ther_base_link" />
-                <child link="left_body" />
-            </joint> -->
-        
+                <pose relative_to='vehicle_ther_base_link'/>
+                <!-- <parent link="vehicle_ther_base_link" /> -->
+                <parent>vehicle_ther_base_link</parent>
+                <child>left_body</child>
+                <!-- <child link="left_body" /> -->
+            </joint>
+
             <!-- <joint name="right_track_joint" type="fixed">
                 <origin xyz="0 ${right_offset_y} 0" rpy="0 0 0" />
                 <parent link="vehicle_ther_base_link" />
                 <child link="right_body" />
             </joint> -->
-        
+
             <link name="pusher_visual_left">
                 <xacro:make_box_inertia mass="1" size_x="0.5" size_y="0.51" size_z="1" />
                 <visual name="left_visual">
@@ -562,7 +580,7 @@
                         <box size="0.5 0.025  0.08" />
                     </geometry>
                 </visual>
-        
+
                 <collision name="left_collision">
                     <geometry>
                         <box size="0.5 0.025  0.08" />
@@ -576,14 +594,14 @@
                         <box size="0.5 0.025  0.08" />
                     </geometry>
                 </visual>
-        
+
                 <collision name="right_collision">
                     <geometry>
                         <box size="0.5 0.025 0.08" />
                     </geometry>
                 </collision>
             </link>
-        
+
             <!-- <joint name="pusher_visual_left_joint" type="fixed">
                 <origin xyz="-0.27 0.12 0" rpy="0 0 0" />
                 <parent link="vehicle_ther_base_link" />
@@ -594,10 +612,10 @@
                 <parent link="vehicle_ther_base_link" />
                 <child link="pusher_visual_right" />
             </joint> -->
-        
+
             <!-- virtual wheel base -->
             <xacro:include filename="$(find thermal_camera_example_pkg)/urdf/tracked_base/wheel_and_caster.xacro" />
-        
+
             <xacro:property name="visual" value="false" />
             <xacro:property name="wheel_base_vertical_offset" value="${wheel_radius-0.08-0.01}" />
             <xacro:property name="dist_caster_front_back" value="0.9" /> <!-- distance between front caster and back caster-->
@@ -608,10 +626,10 @@
             <xacro:wheel wheel_prefix="right" parent_link="vehicle_ther_base_link" visual="${visual}">
                 <origin xyz="0 ${right_offset_y} ${wheel_base_vertical_offset}" rpy="0 0 0" />
             </xacro:wheel>
-            <xacro:caster caster_prefix="front_left" parent_link="vehicle_ther_base_link" visual="${visual}" >
+            <xacro:caster caster_prefix="front_left" parent_link="vehicle_ther_base_link" visual="${visual}">
                 <origin xyz="${dist_caster_front_back/2} ${dist_caster_left_right/2} ${wheel_base_vertical_offset - wheel_radius + caster_radius}" rpy="0 0 0" />
             </xacro:caster>
-            <xacro:caster caster_prefix="front_right" parent_link="vehicle_ther_base_link" visual="${visual}" >
+            <xacro:caster caster_prefix="front_right" parent_link="vehicle_ther_base_link" visual="${visual}">
                 <origin xyz="${dist_caster_front_back/2} ${-dist_caster_left_right/2} ${wheel_base_vertical_offset - wheel_radius + caster_radius}" rpy="0 0 0" />
             </xacro:caster>
             <xacro:caster caster_prefix="back_left" parent_link="vehicle_ther_base_link" visual="${visual}">
@@ -620,7 +638,7 @@
             <xacro:caster caster_prefix="back_right" parent_link="vehicle_ther_base_link" visual="${visual}">
                 <origin xyz="${-dist_caster_front_back/2} ${-dist_caster_left_right/2} ${wheel_base_vertical_offset - wheel_radius + caster_radius}" rpy="0 0 0" />
             </xacro:caster>
-        
+
             <!-- <link name="push_plate">
                 <xacro:make_box_inertia mass="1" size_x="0.5" size_y="0.51" size_z="1" />
                 <visual>
@@ -635,14 +653,14 @@
                     </geometry>
                 </collision>
             </link> -->
-        
+
             <!-- <joint name="push_plate_joint" type="fixed">
                 <origin xyz="${swing_offset_x} 0 0" rpy="0 1 0" />
                 <parent link="vehicle_ther_base_link" />
                 <child link="arm_connector" />
                 <axis xyz="0 1 0"/>
             </joint> -->
-        
+
             <!-- <transmission name="push_plate_joint_transmission">
                 <type>transmission_interface/SimpleTransmission</type>
                 <joint name="push_plate_joint">
@@ -653,7 +671,7 @@
                     <mechanicalReduction>1</mechanicalReduction>
                 </actuator>
             </transmission> -->
-        
+
             <!-- ros_control for gazebo, should only load once!! -->
             <!-- <gazebo>
                 <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
@@ -662,8 +680,6 @@
                 </plugin>
             </gazebo> -->
         </model>
-        
-
 
 
         <gazebo reference="${namespace}/${camera_frame_name}/thermal_camera_link">
