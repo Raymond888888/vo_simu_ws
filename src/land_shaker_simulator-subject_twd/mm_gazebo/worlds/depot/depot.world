@@ -11,11 +11,11 @@
       <uri>model://sun_2</uri>
     </include>
     <!-- A ground plane -->
-    <!-- <include>
+    <include>
       <static>true</static>
-      <pose>0 0 0 0 0 0</pose>
+      <pose>0 0 -0.1 0 0 0</pose>
       <uri>model://grass_plane</uri>
-    </include> -->
+    </include>
     <!-- <include>
       <static>true</static>
       <pose>13 14 3 0 0 0</pose>
@@ -27,14 +27,20 @@
       <pose>-0 0 0 0 0 0</pose>
       <uri>model://smaze2d</uri>
     </include> -->
-    <gravity>0 0 0</gravity>
+    <gravity>0 0 -9.8</gravity>
 
 
     <include>
       <static>true</static>
-      <pose>0 0 0 0 0 0</pose>
+      <pose>0 0 -0.1 0 0 0</pose>
       <uri>model://warehouse</uri>
     </include>
+
+    <!-- <include>
+      <static>true</static>
+      <pose>0 0 0 0 0 0</pose>
+      <uri>model://husky_depot</uri>
+    </include> -->
 
   </world>
 </sdf>
