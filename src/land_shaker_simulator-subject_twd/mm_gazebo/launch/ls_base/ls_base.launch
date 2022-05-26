@@ -2,7 +2,7 @@
   <!-- <arg name="model_pose" default="-x -14.78 -y -13.91 -z 0.5 -R 0 -P 0 -Y 0"/>
   <arg name="world_name" default="/home/wang/wang/git_files/simulation_workspaces/gazebo_maps/height_maze/quad_cliff.world"/> -->
   <arg name="model_pose" default="-x 1 -y 1 -z 0.15 -R 0 -P 0 -Y 0" />
-  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+  <include file="$(find ros_ign_gazebo)/launch/ign_gazebo.launch">
     <!-- <arg name="world_name" value="$(arg world_name)"/> -->
     <arg name="paused" value="false" />
     <arg name="use_sim_time" value="true" />

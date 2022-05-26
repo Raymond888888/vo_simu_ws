@@ -5,7 +5,7 @@
   <arg name="urdf_path" default="$(find mm_description)/urdf/ls/ls.xacro"/>
 
   <!-- startup simulated world -->
-  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+  <include file="$(find ros_ign_gazebo)/launch/ign_gazebo.launch">
     <arg name="world_name" default="worlds/empty.world"/>
     <arg name="paused" value="$(arg paused)"/>
     <arg name="gui" value="$(arg gazebo_gui)"/>
