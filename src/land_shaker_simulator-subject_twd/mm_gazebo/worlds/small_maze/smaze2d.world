@@ -11,21 +11,29 @@
       <uri>model://sun_2</uri>
     </include>
     <!-- A ground plane -->
-    <include>
+    <!-- <include>
       <static>true</static>
       <pose>0 0 0 0 0 0</pose>
       <uri>model://grass_plane</uri>
-    </include>
+    </include> -->
     <!-- <include>
       <static>true</static>
       <pose>13 14 3 0 0 0</pose>
       <uri>model://sroof</uri>
     </include> -->
 
-    <include>
+    <!-- <include>
       <static>true</static>
       <pose>-0 0 0 0 0 0</pose>
       <uri>model://smaze2d</uri>
+    </include> -->
+    <gravity>0 0 0</gravity>
+
+
+    <include>
+      <static>true</static>
+      <pose>0 0 0 0 0 0</pose>
+      <uri>model://warehouse</uri>
     </include>
 
   </world>
