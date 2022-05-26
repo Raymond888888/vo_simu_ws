@@ -64,3 +64,8 @@ roslaunch mm_gazebo ls_bringup.launch  model_pose:="-z 0.4" world_name:=`rospack
 
 - [gazebo_tracked_vehicle](https://git.nrs-lab.com/liyuxiang19D/gazebo_tracked_vehicle) 
 - [universal_robot](https://github.com/ros-industrial/universal_robot)
+
+
+
+
+export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:`rospack find mm_gazebo`/worlds/depot
