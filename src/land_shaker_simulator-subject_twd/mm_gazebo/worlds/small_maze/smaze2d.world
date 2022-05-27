@@ -27,7 +27,7 @@
       <pose>-0 0 0 0 0 0</pose>
       <uri>model://smaze2d</uri>
     </include> -->
-    <gravity>0 0 0</gravity>
+    <gravity>0 0 -9.8</gravity>
 
 
     <include>
