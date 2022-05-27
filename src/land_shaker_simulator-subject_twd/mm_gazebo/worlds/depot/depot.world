@@ -22,11 +22,11 @@
       <direction>-0.1 0.05 -1.0</direction>
     </light>
     <!-- A ground plane -->
-    <include>
+    <!-- <include>
       <static>true</static>
       <pose>0 0 -0.1 0 0 0</pose>
       <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Ground Plane</uri>
-    </include>
+    </include> -->
 
     <include>
       <pose>0 0 -0.1 0 0 0</pose>
@@ -34,7 +34,7 @@
     </include>
 
     <include>
-      <pose>0 0 -0.1 0 0 0</pose>
+      <pose>0 0 0 0 0 0</pose>
       <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/depot/mobile_manipulator/model.sdf</uri>
     </include>
   </world>
