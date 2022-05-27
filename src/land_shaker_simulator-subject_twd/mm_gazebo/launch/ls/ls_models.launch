@@ -4,8 +4,8 @@
 
     <param name="/robot_description" command="$(find xacro)/xacro --inorder '$(arg model)' " />
 
-    <!-- <node name="ls_spawn_model" pkg="gazebo_ros" type="spawn_model" output="screen" args="-urdf -param robot_description -model land_shaker $(arg model_pose)" /> -->
-    <node name="ls_spawn_model" pkg="gazebo_ros" type="spawn_model" output="screen" args="-urdf -param robot_description -model land_shaker $(arg model_pose)" />
+    <!-- <node name="ls_spawn_model" pkg="ros_ign_gazebo" type="ign_gazebo" output="screen" args="-urdf -param robot_description -model land_shaker $(arg model_pose)" /> -->
+    <node name="ls_spawn_model" pkg="ros_ign_gazebo" type="ign_gazebo" output="screen" args="ls.xacro" />
 
     <!-- 启动关节位置控制器 和 底盘速度控制器 -->
     <include file="$(find mm_gazebo)/launch/ls/ls_controller.launch" />

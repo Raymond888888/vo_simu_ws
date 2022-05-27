@@ -14,7 +14,7 @@
   <!-- Load robot description -->
   <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find mm_description)/urdf/ls/ls.xacro'" />
 
-  <node name="large_spawn_model" pkg="gazebo_ros" type="spawn_model" output="screen" args="-urdf -param robot_description -model lbet $(arg model_pose)" />
+  <node name="large_spawn_model" pkg="ros_ign_gazebo" type="ign_gazebo" output="screen" args="-urdf -param robot_description -model lbet $(arg model_pose)" />
 
   <!-- <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher"/> -->
 

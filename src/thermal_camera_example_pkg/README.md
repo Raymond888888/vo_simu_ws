@@ -67,4 +67,7 @@ car_robot : https://www.ncnynl.com/archives/202201/4926.html
 
 2022.5.27
 实现了用ignitiongazebo运行自己定义的world，下一步只需要丰富世界元素即可。
+roslaunch mm_gazebo ls_bringup.launch world_name:=`rospack find mm_gazebo`/worlds/depot/depot.world  model_pose:="-x 2 -y 2 -z 0.15" teleop_base:=false 
 TODO：撼地者无法出现在ign里面，待解决
+
+tudo:只需要解决用ign rosrun ros_ign_gazebo ign_gazebo 运行ls.xacro文件，就可以解决上述问题
