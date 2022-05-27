@@ -78,3 +78,5 @@ TODO：
 add imu
 丰富环境
 键盘移动
+
+$ ign topic -e -t /keyboard/keypress
