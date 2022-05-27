@@ -822,6 +822,8 @@
         </plugin>
         <pose>0 0 0.32 0 -0 0</pose>
       </sensor>
+
+
     </link>
     <joint name='shoulder_pan_joint' type='revolute'>
       <pose relative_to='base_footprint'>0.365 0 0.443 0 -0 0</pose>
@@ -1452,7 +1454,7 @@
     </gazebo>
 
 
-    <!-- <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
+      <!-- <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
       <robotNamespace>/</robotNamespace>
       <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
       <legacyModeNs>1</legacyModeNs>
