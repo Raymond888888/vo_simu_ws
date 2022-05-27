@@ -1368,12 +1368,12 @@
         <pose>-0.01775 0.19055 0.0675 0 4e-06 1.5708</pose>
       </sensor>
     </link>
-    <!--<plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
+    <!-- <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
       <robotNamespace>/</robotNamespace>
       <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
       <legacyModeNs>1</legacyModeNs>
-    </plugin>
-    <plugin name='d435' filename='librealsense_gazebo_plugin.so'>
+    </plugin> -->
+    <!--<plugin name='d435' filename='librealsense_gazebo_plugin.so'>
       <depthUpdateRate>30</depthUpdateRate>
       <colorUpdateRate>30</colorUpdateRate>
       <infraredUpdateRate>30</infraredUpdateRate>
