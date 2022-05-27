@@ -80,3 +80,4 @@ add imu
 键盘移动
 
 $ ign topic -e -t /keyboard/keypress
+ign topic -e -t /keyboard/keypress
