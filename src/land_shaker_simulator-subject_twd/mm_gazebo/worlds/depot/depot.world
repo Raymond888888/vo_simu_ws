@@ -33,6 +33,9 @@
       <uri>https://fuel.ignitionrobotics.org/1.0/MovAi/models/Warehouse</uri>
     </include>
 
-
+    <include>
+      <pose>0 0 -0.1 0 0 0</pose>
+      <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/depot/mobile_manipulator/model.sdf</uri>
+    </include>
   </world>
 </sdf>
