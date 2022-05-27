@@ -3,7 +3,8 @@
   <model name='mobile_manipulator'>
     <link name='base_footprint'>
       <inertial>
-        <pose>0.008939 0 0.036343 0 -0 0</pose>
+        <!-- <pose>0.008939 0 0.036343 0 -0 0</pose> -->
+        <pose relative_to='__model__'>0.008939 0 0.036343 0 -0 0</pose>
         <mass>61.44</mass>
         <inertia>
           <ixx>7.12669</ixx>
@@ -1460,8 +1461,8 @@
         <match field="data">16777235</match>
       </input>
       <output type="ignition.msgs.Twist" topic="/cmd_vel">
-      linear: {x: 0.5}, angular: {z: 0.0}
-  </output>
+        linear: {x: 0.5}, angular: {z: 0.0}
+      </output>
     </plugin>
 
     <!-- Moving Backward-->
@@ -1470,7 +1471,7 @@
         <match field="data">16777237</match>
       </input>
       <output type="ignition.msgs.Twist" topic="/cmd_vel">
-      linear: {x: -0.5}, angular: {z: 0.0}
+        linear: {x: -0.5}, angular: {z: 0.0}
       </output>
     </plugin>
 
