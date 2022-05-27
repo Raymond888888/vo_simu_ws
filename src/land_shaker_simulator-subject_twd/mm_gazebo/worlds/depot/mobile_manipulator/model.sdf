@@ -14,7 +14,7 @@
           <izz>3.86618</izz>
         </inertia>
       </inertial>
-      <!-- <collision name='base_footprint_fixed_joint_lump__vehicle_base_link_collision'>
+       <collision name='base_footprint_fixed_joint_lump__vehicle_base_link_collision'>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
           <box>
@@ -30,7 +30,7 @@
           </friction>
         </surface>
       </collision>
-      <collision name='base_footprint_fixed_joint_lump__base_link_collision_1'>
+     <collision name='base_footprint_fixed_joint_lump__base_link_collision_1'>
         <pose>0.365 0 0.28 0 -0 0</pose>
         <geometry>
           <mesh>
@@ -771,7 +771,7 @@
           </mesh>
         </geometry>
       </visual>
-      <gravity>1</gravity>
+      <!--<gravity>1</gravity>
       <sensor name='imu_sensor' type='imu'>
         <always_on>1</always_on>
         <update_rate>100</update_rate>
