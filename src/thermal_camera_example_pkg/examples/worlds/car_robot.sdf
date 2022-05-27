@@ -40,7 +40,7 @@
                     <property key="showTitleBar" type="bool">false</property>
                 </ignition-gui>
             </plugin>
-            <!-- <plugin filename="GzSceneManager" name="Scene Manager">
+            <plugin filename="GzSceneManager" name="Scene Manager">
                 <ignition-gui>
                     <property key="resizable" type="bool">false</property>
                     <property key="width" type="double">5</property>
@@ -48,7 +48,7 @@
                     <property key="state" type="string">floating</property>
                     <property key="showTitleBar" type="bool">false</property>
                 </ignition-gui>
-            </plugin> -->
+            </plugin>
             <plugin filename="InteractiveViewControl" name="Interactive view control">
                 <ignition-gui>
                     <property key="resizable" type="bool">false</property>

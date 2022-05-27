@@ -71,3 +71,10 @@ roslaunch mm_gazebo ls_bringup.launch world_name:=`rospack find mm_gazebo`/world
 TODO：撼地者无法出现在ign里面，待解决
 
 tudo:只需要解决用ign rosrun ros_ign_gazebo ign_gazebo 运行ls.xacro文件，就可以解决上述问题
+
+2022.5.28
+milestone:可以实现在新环境下，ls搭载热像仪实现图像传输
+TODO： 
+add imu
+丰富环境
+键盘移动

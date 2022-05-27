@@ -175,15 +175,39 @@
       -->
       <temperature_gradient>0.1</temperature_gradient>
     </atmosphere>
-
+    <model name="ground_plane">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+            </plane>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.8 0.8 0.8 1</ambient>
+            <diffuse>0.8 0.8 0.8 1</diffuse>
+            <specular>0.8 0.8 0.8 1</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
 
     <include>
-      <pose>0 0 -0.1 0 0 0</pose>
+      <pose>0 0 0.01 0 0 0</pose>
       <uri>https://fuel.ignitionrobotics.org/1.0/MovAi/models/Warehouse</uri>
     </include>
 
     <include>
-      <pose>0 0 0 0 0 0</pose>
+      <pose>0 0 0.1 0 0 0</pose>
       <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/depot/mobile_manipulator/model.sdf</uri>
     </include>
   </world>
