@@ -1597,6 +1597,11 @@
           <update_rate>30</update_rate>
           <visualize>true</visualize>
           <topic>thermal_camera</topic>
+          <!-- <plugin filename="ignition-gazebo-thermal-sensor-system" name="ignition::gazebo::systems::ThermalSensor">
+            <min_temp>253.15</min_temp>
+            <max_temp>673.15</max_temp>
+            <resolution>1.0</resolution>
+          </plugin> -->
         </sensor>
       </link>
       <joint name='thermal_camera_joint' type='revolute'>
@@ -1660,8 +1665,8 @@
         <ignition-gui>
           <title>Thermal camera</title>
           <property key="state" type="string">floating</property>
-          <property type="double" key="width">350</property>
-          <property type="double" key="height">315</property>
+          <property type="double" key="width">320</property>
+          <property type="double" key="height">240</property>
         </ignition-gui>
         <topic>thermal_camera</topic>
         <topic_picker>false</topic_picker>
@@ -1894,9 +1899,26 @@
           linear: {x: 0.0}, angular: {z: 4.5}
         </output>
       </plugin>
-
     </model>
 
+
+    <include>
+      <pose>1 0 0 0 0 1.570796</pose>
+      <name>human_'rescue_randy'</name>
+      <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Rescue Randy</uri>
+    </include>
+
+    <include>
+      <pose>2.25 .5 .1 0 0 1.570796</pose>
+      <name>phone</name>
+      <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Samsung J8 Black</uri>
+    </include>
+
+    <include>
+      <pose>2.25 -.5 .1 0 0 1.570796</pose>
+      <name>backpack</name>
+      <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Backpack</uri>
+    </include>
 
   </world>
 </sdf>
