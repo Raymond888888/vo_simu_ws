@@ -1690,7 +1690,7 @@
       </joint>
 
       <link name='left_wheel'>
-        <pose relative_to="base_footprint">-0.5 0.6 0.1 -1.5707 0 0</pose> <!--angles are in radian-->
+        <pose relative_to="base_footprint">-0.5 0.6 -0.2 -1.5707 0 0</pose> <!--angles are in radian-->
         <inertial>
           <mass>1</mass>
           <inertia>
@@ -1705,8 +1705,8 @@
         <visual name='visual'>
           <geometry>
             <cylinder>
-              <radius>0.2</radius>
-              <length>0.2</length>
+              <radius>0.01</radius>
+              <length>0.01</length>
             </cylinder>
           </geometry>
           <material>
@@ -1718,15 +1718,15 @@
         <collision name='collision'>
           <geometry>
             <cylinder>
-              <radius>0.2</radius>
-              <length>0.2</length>
+              <radius>0.01</radius>
+              <length>0.01</length>
             </cylinder>
           </geometry>
         </collision>
       </link>
 
       <link name='right_wheel'>
-        <pose relative_to="base_footprint">-0.5 -0.6 0.1 -1.5707 0 0</pose> <!--angles are in radian-->
+        <pose relative_to="base_footprint">-0.5 -0.6 -0.2 -1.5707 0 0</pose> <!--angles are in radian-->
         <inertial>
           <mass>1</mass>
           <inertia>
@@ -1741,8 +1741,8 @@
         <visual name='visual'>
           <geometry>
             <cylinder>
-              <radius>0.2</radius>
-              <length>0.2</length>
+              <radius>0.01</radius>
+              <length>0.01</length>
             </cylinder>
           </geometry>
           <material>
@@ -1754,8 +1754,8 @@
         <collision name='collision'>
           <geometry>
             <cylinder>
-              <radius>0.2</radius>
-              <length>0.2</length>
+              <radius>0.01</radius>
+              <length>0.01</length>
             </cylinder>
           </geometry>
         </collision>
@@ -1779,7 +1779,7 @@
         <visual name='visual'>
           <geometry>
             <sphere>
-              <radius>0.2</radius>
+              <radius>0.01</radius>
             </sphere>
           </geometry>
           <material>
@@ -1791,7 +1791,7 @@
         <collision name='collision'>
           <geometry>
             <sphere>
-              <radius>0.2</radius>
+              <radius>0.01</radius>
             </sphere>
           </geometry>
         </collision>
@@ -1806,8 +1806,8 @@
         <left_joint>left_wheel_joint</left_joint>
         <right_joint>right_wheel_joint</right_joint>
         <wheel_separation>1.2</wheel_separation>
-        <wheel_radius>0.2</wheel_radius>
-        <odom_publish_frequency>1</odom_publish_frequency>
+        <wheel_radius>0.01</wheel_radius>
+        <odom_publish_frequency>10</odom_publish_frequency>
         <topic>cmd_vel</topic>
       </plugin>
       <!-- Moving Forward-->
@@ -1816,7 +1816,7 @@
           <match field="data">16777235</match>
         </input>
         <output type="ignition.msgs.Twist" topic="/cmd_vel">
-          linear: {x: 0.5}, angular: {z: 0.0}
+          linear: {x: 1.0}, angular: {z: 0.0}
         </output>
       </plugin>
 
@@ -1826,7 +1826,7 @@
           <match field="data">16777237</match>
         </input>
         <output type="ignition.msgs.Twist" topic="/cmd_vel">
-          linear: {x: -0.5}, angular: {z: 0.0}
+          linear: {x: -1.0}, angular: {z: 0.0}
         </output>
       </plugin>
 
