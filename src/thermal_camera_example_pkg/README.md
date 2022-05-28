@@ -86,5 +86,9 @@ add imu
 丰富环境
 bug:摄像头和imu的collision不能撞到东西，否则会开始pitch轴滚转，停不下来
 
+
+
+
 $ ign topic -e -t /keyboard/keypress
 ign topic -e -t /keyboard/keypress
+roslaunch mm_gazebo ls_bringup.launch world_name:=`rospack find mm_gazebo`/worlds/depot/depot.world  model_pose:="-x 2 -y 2 -z 0.15" teleop_base:=false 
