@@ -44,7 +44,7 @@ void OnImage(const ignition::msgs::Image &_msg) {
         }
     }
 
-    cv::Mat Imageresult(_msg.height(), _msg.width(), CV_16U, thermalBuffer);
+    cv::Mat Imageresult(_msg.height(), _msg.width(), CV_16UC1, thermalBuffer);
     std::cout << "height" << _msg.height() << "width" << _msg.width() << std::endl;
 
     double fpstimestart = cv::getTickCount();

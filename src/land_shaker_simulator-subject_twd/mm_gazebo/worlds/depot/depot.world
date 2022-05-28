@@ -1597,11 +1597,6 @@
           <update_rate>30</update_rate>
           <visualize>true</visualize>
           <topic>thermal_camera</topic>
-          <!-- <plugin filename="ignition-gazebo-thermal-sensor-system" name="ignition::gazebo::systems::ThermalSensor">
-            <min_temp>253.15</min_temp>
-            <max_temp>673.15</max_temp>
-            <resolution>1.0</resolution>
-          </plugin> -->
           <pose>0 0 0 0 -0 0</pose>
         </sensor>
       </link>
