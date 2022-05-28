@@ -1602,6 +1602,7 @@
             <max_temp>673.15</max_temp>
             <resolution>1.0</resolution>
           </plugin> -->
+          <pose>0 0 0 0 -0 0</pose>
         </sensor>
       </link>
       <joint name='thermal_camera_joint' type='revolute'>
@@ -1646,7 +1647,7 @@
             <frameName>imu_link</frameName>
             <initialOrientationAsReference>0</initialOrientationAsReference>
           </plugin>
-          <pose>0 0 0.32 0 -0 0</pose>
+          <pose>0 0 0 0 -0 0</pose>
         </sensor>
       </link>
       <joint name='imu_joint' type='revolute'>

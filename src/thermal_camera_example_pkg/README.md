@@ -84,6 +84,7 @@ done :键盘移动
 TODO：
 add imu
 丰富环境
+bug:摄像头和imu的collision不能撞到东西，否则会开始pitch轴滚转，停不下来
 
 $ ign topic -e -t /keyboard/keypress
 ign topic -e -t /keyboard/keypress
