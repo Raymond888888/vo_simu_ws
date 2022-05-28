@@ -57,20 +57,28 @@ void OnImage(const ignition::msgs::Image &_msg) {
     cv::imshow("result_win", Imageresult);
     cv::waitKey(1);
 
-    sensor_msgs::ImagePtr msg = cv_bridge::CvImage(std_msgs::Header(), "mono16",Imageresult).toImageMsg();
+    sensor_msgs::ImagePtr msg = cv_bridge::CvImage(std_msgs::Header(), "mono16", Imageresult).toImageMsg();
     msg->header.stamp = ros::Time::now();
     pubThermalImage.publish(msg);
 
     delete[] thermalBuffer;
 }
+void imuHandler(const ignition::msgs::Image &_msg) {
+}
 
 int main(int argc, char **argv) {
-    ignition::transport::Node node;
-    if (!node.Subscribe("/thermal_camera", &OnImage)) {
+    ignition::transport::Node thermal_node;
+    ignition::transport::Node imu_node;
+    if (!thermal_node.Subscribe("/thermal_camera", &OnImage)) {
         std::cerr << "Error subscribing to the thermal camera topic" << std::endl;
         return -1;
     }
-    std::cout << " thermal_camera_example start! " << std::endl;
+    // if (!imu_node.Subscribe("/imu_topic", &imuHandler)) {
+    //     std::cerr << "Error subscribing to the IMU topic" << std::endl;
+    //     return -1;
+    // }
+    std::cout << " thermal_imu_vio_example start! " << std::endl;
+    std::cout << " thermal_imu_vio_example start! " << std::endl;
     ros::init(argc, argv, "thermal_camera_example_pkg");
     ros::NodeHandle rnh;
     image_transport::ImageTransport it(rnh);

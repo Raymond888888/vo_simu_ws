@@ -1610,7 +1610,7 @@
           <always_on>1</always_on>
           <update_rate>100</update_rate>
           <visualize>true</visualize>
-          <topic>__imu_topic__</topic>
+          <topic>imu_topic</topic>
           <plugin filename="ignition-gazebo-imu-system" name="ignition::gazebo::systems::Imu">
             <topicName>imu/data</topicName>
             <bodyName>imu_link</bodyName>
