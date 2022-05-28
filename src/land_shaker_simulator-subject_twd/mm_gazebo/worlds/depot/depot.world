@@ -1710,9 +1710,9 @@
             </cylinder>
           </geometry>
           <material>
-            <ambient>1.0 0.0 0.0 1</ambient>
-            <diffuse>1.0 0.0 0.0 1</diffuse>
-            <specular>1.0 0.0 0.0 1</specular>
+            <ambient>0.0 0.0 0.0 0</ambient>
+            <diffuse>0.0 0.0 0.0 0</diffuse>
+            <specular>0.0 0.0 0.0 0</specular>
           </material>
         </visual>
         <collision name='collision'>
@@ -1746,9 +1746,9 @@
             </cylinder>
           </geometry>
           <material>
-            <ambient>1.0 0.0 0.0 1</ambient>
-            <diffuse>1.0 0.0 0.0 1</diffuse>
-            <specular>1.0 0.0 0.0 1</specular>
+            <ambient>0.0 0.0 0.0 0</ambient>
+            <diffuse>0.0 0.0 0.0 0</diffuse>
+            <specular>0.0 0.0 0.0 0</specular>
           </material>
         </visual>
         <collision name='collision'>
@@ -1783,9 +1783,9 @@
             </sphere>
           </geometry>
           <material>
-            <ambient>0.0 1 0.0 1</ambient>
-            <diffuse>0.0 1 0.0 1</diffuse>
-            <specular>0.0 1 0.0 1</specular>
+            <ambient>0.0 0.0 0.0 0</ambient>
+            <diffuse>0.0 0.0 0.0 0</diffuse>
+            <specular>0.0 0.0 0.0 </specular>
           </material>
         </visual>
         <collision name='collision'>
@@ -1836,7 +1836,7 @@
           <match field="data">16777236</match>
         </input>
         <output type="ignition.msgs.Twist" topic="/cmd_vel">
-          linear: {x: 0.0}, angular: {z: -0.5}
+          linear: {x: 0.0}, angular: {z: -2.5}
         </output>
       </plugin>
 
@@ -1846,7 +1846,7 @@
           <match field="data">16777234</match>
         </input>
         <output type="ignition.msgs.Twist" topic="/cmd_vel">
-          linear: {x: 0.0}, angular: {z: 0.5}
+          linear: {x: 0.0}, angular: {z: 2.5}
         </output>
       </plugin>
 
