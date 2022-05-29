@@ -53,6 +53,7 @@ void imageDataHandler(const sensor_msgs::Image::ConstPtr &imageData)
     cv_bridge::CvImageConstPtr cv_ptr;
     try
     {
+        // cv_ptr = cv_bridge::toCvShare(imageData, "mono8");
         cv_ptr = cv_bridge::toCvShare(imageData, "mono8");
     }
     catch (cv_bridge::Exception &e)

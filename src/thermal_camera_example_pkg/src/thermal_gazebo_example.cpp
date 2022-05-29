@@ -61,7 +61,8 @@ void OnImage(const ignition::msgs::Image &_msg) {
     cv::imshow("result_win", Imageresult);
     cv::waitKey(1);
 
-    sensor_msgs::ImagePtr msg = cv_bridge::CvImage(std_msgs::Header(), "mono16", Imageresult).toImageMsg();
+    // sensor_msgs::ImagePtr msg = cv_bridge::CvImage(std_msgs::Header(), "mono16", Imageresult).toImageMsg();
+    sensor_msgs::ImagePtr msg = cv_bridge::CvImage(std_msgs::Header(), "mono8", Imageresult).toImageMsg();
     msg->header.stamp = ros::Time::now();
     pubThermalImage.publish(msg);
 
