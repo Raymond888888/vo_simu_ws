@@ -4,10 +4,16 @@
 #include <sensor_msgs/Image.h>
 
 #include <cstdint>
+#include <ignition/gazebo/components/Imu.hh>
+// #include <ignition/gazebo6/ignition/gazebo/components/Imu.hh>
 #include <ignition/msgs.hh>
 #include <ignition/transport.hh>
 #include <opencv2/core/core.hpp>
 #include <opencv2/opencv.hpp>
+
+
+#include <ignition/gazebo/System.hh>
+#include <sdf/sdf.hh>
 
 int cnt = 0;
 double last_fps_time;

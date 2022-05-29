@@ -19,8 +19,15 @@ find_package(catkin REQUIRED COMPONENTS
   pcl_ros
   pcl_conversions
 )
-
 find_package(OpenCV 4.2 REQUIRED)
+find_package(sdformat9 REQUIRED)
+find_package(ignition-common3-all REQUIRED)
+find_package(ignition-gazebo3-all REQUIRED)
+find_package(ignition-math6-all REQUIRED)
+find_package(ignition-msgs5-all REQUIRED)
+find_package(ignition-physics2-all REQUIRED)
+find_package(ignition-sensors3-all REQUIRED)
+find_package(ignition-transport8-all REQUIRED)
 
 find_package(ignition-transport11 QUIET REQUIRED)
 set(IGN_TRANSPORT_VER ${ignition-transport11_VERSION_MAJOR})
@@ -114,7 +121,6 @@ set(IGN_TRANSPORT_VER ${ignition-transport11_VERSION_MAJOR})
 # # CATKIN_DEPENDS: catkin_packages dependent projects also need
 # # DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-
   # INCLUDE_DIRS include
   # LIBRARIES thermal_camera_example_pkg
   CATKIN_DEPENDS roscpp rosmsg rospy
@@ -132,7 +138,31 @@ include_directories(
   # include
   ${catkin_INCLUDE_DIRS}
   ${OpenCV_INCLUDE_DIRS}
+  ${OpenCV_INCLUDE_DIRS}
   /usr/include/ignition/
+)
+
+include_directories(
+  ${PROJECT_SOURCE_DIR}
+  include
+  ${SDFORMAT-INCLUDE_DIRS}
+  ${IGNITION-COMMON_INCLUDE_DIRS}
+  ${IGNITION-GAZEBO_INCLUDE_DIRS}
+  ${IGNITION-MATH_INCLUDE_DIRS}
+  ${IGNITION-MSGS_INCLUDE_DIRS}
+  ${IGNITION-PHYSICS_INCLUDE_DIRS}
+  ${IGNITION-SENSORS_INCLUDE_DIRS}
+  ${IGNITION-TRANSPORT_INCLUDE_DIRS}
+)
+link_libraries(
+  ${SDFORMAT-LIBRARIES}
+  ${IGNITION-COMMON_LIBRARIES}
+  ${IGNITION-GAZEBO_LIBRARIES}
+  ${IGNITION-MATH_LIBRARIES}
+  ${IGNITION-MSGS_LIBRARIES}
+  ${IGNITION-PHYSICS_LIBRARIES}
+  ${IGNITION-SENSORS_LIBRARIES}
+  ${IGNITION-TRANSPORT_LIBRARIES}
 )
 
 # # Declare a C++ library
@@ -154,13 +184,13 @@ target_link_libraries(thermal_camera_example
   ignition-transport${IGN_TRANSPORT_VER}::core
 )
 
-
 add_executable(orb_cv src/orb_cv.cpp)
 add_dependencies(orb_cv ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(orb_cv
-        ${catkin_LIBRARIES}
-        ${OpenCV_LIBRARIES}
-        )
+  ${catkin_LIBRARIES}
+  ${OpenCV_LIBRARIES}
+)
+
 # # Rename C++ executable without prefix
 # # The above recommended prefix causes long target names, the following renames the
 # # target back to the shorter version for ease of user use
@@ -172,7 +202,6 @@ target_link_libraries(orb_cv
 # add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 # # Specify libraries to link a library or executable target against
-
 
 # ############
 # # Install ##
