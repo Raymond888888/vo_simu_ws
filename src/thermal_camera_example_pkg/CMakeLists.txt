@@ -22,13 +22,14 @@ find_package(catkin REQUIRED COMPONENTS
 find_package(OpenCV 4.2 REQUIRED)
 find_package(sdformat9 REQUIRED)
 find_package(ignition-common3-all REQUIRED)
-find_package(ignition-gazebo3-all REQUIRED)
+# find_package(ignition-gazebo3-all REQUIRED) #!
+find_package(ignition-gazebo6-all REQUIRED)
 find_package(ignition-math6-all REQUIRED)
 find_package(ignition-msgs5-all REQUIRED)
 find_package(ignition-physics2-all REQUIRED)
-find_package(ignition-sensors3-all REQUIRED)
+# find_package(ignition-sensors3-all REQUIRED) #!
+find_package(ignition-sensors6-all REQUIRED)
 find_package(ignition-transport8-all REQUIRED)
-
 find_package(ignition-transport11 QUIET REQUIRED)
 set(IGN_TRANSPORT_VER ${ignition-transport11_VERSION_MAJOR})
 
@@ -121,9 +122,11 @@ set(IGN_TRANSPORT_VER ${ignition-transport11_VERSION_MAJOR})
 # # CATKIN_DEPENDS: catkin_packages dependent projects also need
 # # DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
+
   # INCLUDE_DIRS include
   # LIBRARIES thermal_camera_example_pkg
   CATKIN_DEPENDS roscpp rosmsg rospy
+
   # DEPENDS system_lib
 )
 

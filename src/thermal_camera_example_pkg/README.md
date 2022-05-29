@@ -84,10 +84,11 @@ done :键盘移动
 TODO：
 add imu
 丰富环境
-bug:摄像头和imu的collision不能撞到东西，否则会开始pitch轴滚转，停不下来
-
-
+bugs:摄像头和imu的collision不能撞到东西，否则会开始pitch轴滚转，停不下来
 working:过编译再说
+
+2022.5.29
+
 
 
 

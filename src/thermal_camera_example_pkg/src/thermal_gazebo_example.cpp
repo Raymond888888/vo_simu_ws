@@ -4,21 +4,19 @@
 #include <sensor_msgs/Image.h>
 
 #include <cstdint>
-#include <ignition/gazebo/components/Imu.hh>
+// #include <ignition/gazebo/components/Imu.hh>
 // #include <ignition/gazebo6/ignition/gazebo/components/Imu.hh>
+#include <sdf/Imu.hh>
+#include <ignition/gazebo/System.hh>
 #include <ignition/msgs.hh>
 #include <ignition/transport.hh>
 #include <opencv2/core/core.hpp>
 #include <opencv2/opencv.hpp>
-
-
-#include <ignition/gazebo/System.hh>
 #include <sdf/sdf.hh>
 
 int cnt = 0;
 double last_fps_time;
 image_transport::Publisher pubThermalImage;
-
 // used to set the proper resolution of the camera's output (10mK)
 // 用于设置相机输出的正确分辨率（10mK）
 double linearResolution = 0.01;
@@ -69,21 +67,26 @@ void OnImage(const ignition::msgs::Image &_msg) {
 
     delete[] thermalBuffer;
 }
-void imuHandler(const ignition::msgs::Image &_msg) {
-}
-
+// void imuCb(const ignition::msgs::IMU &_msg) {
+// std::string imuName;
+// bool imuInitialized;
+// bool imuMsgValid = true;
+// std::mutex imuMsgMutex;
+// // std::lock_guard<std::mutex> lock(this->imuMsgMutex);
+// const::std::string name = _msg.entity_name();
+// std::cout<<"name="<<name<<std::endl;
+// }
 int main(int argc, char **argv) {
     ignition::transport::Node thermal_node;
-    ignition::transport::Node imu_node;
+    // ignition::transport::Node imu_node;
     if (!thermal_node.Subscribe("/thermal_camera", &OnImage)) {
         std::cerr << "Error subscribing to the thermal camera topic" << std::endl;
         return -1;
     }
-    // if (!imu_node.Subscribe("/imu_topic", &imuHandler)) {
+    // if (!imu_node.Subscribe("/imu_topic", &imuCb)) {
     //     std::cerr << "Error subscribing to the IMU topic" << std::endl;
     //     return -1;
     // }
-    std::cout << " thermal_imu_vio_example start! " << std::endl;
     std::cout << " thermal_imu_vio_example start! " << std::endl;
     ros::init(argc, argv, "thermal_camera_example_pkg");
     ros::NodeHandle rnh;
