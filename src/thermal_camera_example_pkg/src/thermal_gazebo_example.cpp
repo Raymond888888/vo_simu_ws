@@ -77,6 +77,8 @@ void imuCb(const ignition::msgs::IMU &_msg) {
     // std::cout << "name=" << name << std::endl;
     ignition::msgs::Vector3d angular_v = _msg.angular_velocity();
     std::cout << "angular_velocity:" << angular_v.x() << std::endl;
+    ignition::msgs::Quaternion Q_orientation = _msg.orientation();
+    std::cout << "Q_orientation:" << Q_orientation.x() << std::endl;
 }
 int main(int argc, char **argv) {
     ignition::transport::Node thermal_node;
