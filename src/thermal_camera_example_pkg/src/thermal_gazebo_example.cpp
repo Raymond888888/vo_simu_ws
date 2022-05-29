@@ -73,8 +73,10 @@ void imuCb(const ignition::msgs::IMU &_msg) {
     bool imuMsgValid = true;
     std::mutex imuMsgMutex;
     // std::lock_guard<std::mutex> lock(this->imuMsgMutex);
-    const ::std::string name = _msg.entity_name();
-    std::cout << "name=" << name << std::endl;
+    // const ::std::string name = _msg.entity_name();
+    // std::cout << "name=" << name << std::endl;
+    ignition::msgs::Vector3d angular_v = _msg.angular_velocity();
+    std::cout << "angular_velocity:" << angular_v.x() << std::endl;
 }
 int main(int argc, char **argv) {
     ignition::transport::Node thermal_node;
