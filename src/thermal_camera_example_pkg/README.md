@@ -70,7 +70,7 @@ car_robot : https://www.ncnynl.com/archives/202201/4926.html
 roslaunch mm_gazebo ls_bringup.launch world_name:=`rospack find mm_gazebo`/worlds/depot/depot.world  model_pose:="-x 2 -y 2 -z 0.15" teleop_base:=false 
 TODO：撼地者无法出现在ign里面，待解决
 
-tudo:只需要解决用ign rosrun ros_ign_gazebo ign_gazebo 运行ls.xacro文件，就可以解决上述问题
+todo:只需要解决用ign rosrun ros_ign_gazebo ign_gazebo 运行ls.xacro文件，就可以解决上述问题
 
 2022.5.28
 milestone:可以实现在新环境下，ls搭载热像仪实现图像传输(ppp1.png)
@@ -88,11 +88,13 @@ bugs:摄像头和imu的collision不能撞到东西，否则会开始pitch轴滚�
 working:过编译再说
 
 2022.5.29
+TODO：丰富环境，验证算法
+
+2022.5.30
 
 
 
 
 
-$ ign topic -e -t /keyboard/keypress
 ign topic -e -t /keyboard/keypress
 roslaunch mm_gazebo ls_bringup.launch world_name:=`rospack find mm_gazebo`/worlds/depot/depot.world  model_pose:="-x 2 -y 2 -z 0.15" teleop_base:=false 
