@@ -173,13 +173,17 @@
         view. Typical temperature gradient is -0.0065 K/m which produces a
         temperature range of 0.75 kelvin
       -->
-      <temperature_gradient>0.1</temperature_gradient>
+      <!-- <temperature_gradient>0.1</temperature_gradient> -->
+      <temperature_gradient>0.01</temperature_gradient>
     </atmosphere>
 
-    <include>
+    <!-- <include>
       <pose>0 0 -0.05 0 0 0</pose>
       <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/depot/depot/</uri>
-    </include>
+      <plugin filename="ignition-gazebo-thermal-system" name="ignition::gazebo::systems::Thermal">
+        <temperature>295.0</temperature>
+      </plugin>
+    </include> -->
 
     <model name='mobile_manipulator' canonical_link='base_footprint'>
       <pose relative_to='world'>0 0 0.2 0 0 0</pose>
@@ -1418,9 +1422,7 @@
           </geometry>
         </visual>
         <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-        <sensor name='color' type='camera'>
-          <camera name='color_optical_frame'>
+        <kinematic>0</kinema30r_optical_frame'>
             <horizontal_fov>1.047</horizontal_fov>
             <image>
               <width>640</width>
@@ -1850,16 +1852,22 @@
       </plugin>
     </model>
 
-    <include>
-      <pose>1 5 0 0 0 0</pose>
+    <!-- <include>
+      <pose>2 5 0 0 0 0</pose>
       <name>human_'rescue_randy'</name>
       <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Rescue Randy</uri>
+    </include> -->
+
+    <include>
+      <pose>1 5 0 0 0 0</pose>
+      <name>human_'rescue_randy_sitting'</name>
+      <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/depot/Rescue Randy Sitting/</uri>
     </include>
 
     <include>
       <pose>2.25 .5 .1 0 0 1.570796</pose>
       <name>phone</name>
-      <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Samsung J8 Black</uri>
+      <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/depot/Samsung J8 Black/</uri>
     </include>
 
     <include>
@@ -1868,17 +1876,35 @@
       <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Backpack</uri>
     </include>
 
-    <include>
+    <!-- <include>
       <pose>5 -.5 .1 0 0 1.570796</pose>
       <name>Buckets</name>
       <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/aws_robomaker_warehouse_Bucket_01</uri>
-    </include>
+    </include> -->
 
     <!-- <include>
       <pose>0 0 -0.05 0 0 0</pose>
       <uri>https://fuel.ignitionrobotics.org/1.0/MovAi/models/Warehouse</uri>
     </include>   -->
-    
+    <!-- 
+    <include>
+      <pose>0 0 0 0 0 0</pose>
+      <name>raceway</name>
+      <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/depot/Prius on Sonoma Raceway/</uri> -->
+    <!-- <plugin filename="ignition-gazebo-thermal-system" name="ignition::gazebo::systems::Thermal">
+        <temperature>295.0</temperature>
+      </plugin> -->
+    <!-- </include> -->                                       
+
+    <include>
+      <pose>0 0 0 0 0 0</pose>
+      <name>grasspatch</name>
+      <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/depot/grasspatch</uri>
+      <plugin filename="ignition-gazebo-thermal-system" name="ignition::gazebo::systems::Thermal">
+        <temperature>301.0</temperature>
+      </plugin>
+    </include>
+
     <!-- <model name="ground_plane">
       <static>true</static>
       <link name="link">
@@ -1903,6 +1929,9 @@
           </material>
         </visual>
       </link>
+      <plugin filename="ignition-gazebo-thermal-system" name="ignition::gazebo::systems::Thermal">
+        <temperature>295.0</temperature>
+      </plugin>
     </model> -->
   </world>
 </sdf>
