@@ -1341,7 +1341,7 @@
     </include>
 
     <include>
-      <pose>2.25 -.5 .1 0 0 1.570796</pose>
+      <pose>4.5 -.5 .1 0 0 1.570796</pose>
       <name>backpack</name>
       <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Backpack</uri>
     </include>
@@ -1350,11 +1350,7 @@
       <pose>0 0 0 0 0 0</pose>
       <name>grasspatch</name>
       <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/grasspatch</uri>
-      <plugin filename="ignition-gazebo-thermal-system" name="ignition::gazebo::systems::Thermal">
-        <temperature>293.15</temperature>
-      </plugin>
     </include>
-
 
     <!-- 内墙 -->
     <include>
@@ -1433,7 +1429,8 @@
     <!-- NIST maze wall triple holes 120 -->
 
     <model name="box">
-      <pose>5.5 0 0.5 0 0 0</pose>
+      <!-- <pose>5.5 0 0.5 0 0 0</pose> -->
+      <pose>0 0 0.5 0 0 0</pose>
       <link name="box_link">
         <inertial>
           <inertia>
@@ -1465,7 +1462,7 @@
             <specular>1 0 0 1</specular>
           </material>
           <plugin filename="ignition-gazebo-thermal-system" name="ignition::gazebo::systems::Thermal">
-            <temperature>325.0</temperature>
+            <temperature>285.0</temperature>
           </plugin>
         </visual>
       </link>

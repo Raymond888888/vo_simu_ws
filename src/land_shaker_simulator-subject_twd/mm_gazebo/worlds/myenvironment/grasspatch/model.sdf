@@ -40,8 +40,12 @@
             </metal>
           </pbr>
         </material>
-      </visual>
 
+        <plugin filename="ignition-gazebo-thermal-system" name="ignition::gazebo::systems::Thermal">
+          <temperature>296.15</temperature>
+        </plugin>
+
+      </visual>
     </link>
   </model>
 </sdf>
