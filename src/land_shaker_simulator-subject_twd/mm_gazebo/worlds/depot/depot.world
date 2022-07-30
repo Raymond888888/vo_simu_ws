@@ -166,7 +166,7 @@
     </light>
 
     <atmosphere type="adiabatic">
-      <temperature>295</temperature>
+      <temperature>297</temperature>
       <!--
         This is a more exaggerated temperature gradient, which produces a
         temperature range of ~11.5 kelvin for objects in the thermal camera
@@ -1554,6 +1554,11 @@
           <visualize>true</visualize>
           <topic>thermal_camera</topic>
           <pose>0 0 0 0 -0 0</pose>
+          <plugin filename="ignition-gazebo-thermal-sensor-system" name="ignition::gazebo::systems::ThermalSensor">
+            <min_temp>273.15</min_temp>
+            <max_temp>313.15</max_temp>
+            <resolution>0.01</resolution>
+          </plugin>
         </sensor>
       </link>
       <joint name='thermal_camera_joint' type='revolute'>
@@ -1886,24 +1891,71 @@
       <pose>0 0 -0.05 0 0 0</pose>
       <uri>https://fuel.ignitionrobotics.org/1.0/MovAi/models/Warehouse</uri>
     </include>   -->
-    <!-- 
-    <include>
-      <pose>0 0 0 0 0 0</pose>
-      <name>raceway</name>
-      <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/depot/Prius on Sonoma Raceway/</uri> -->
-    <!-- <plugin filename="ignition-gazebo-thermal-system" name="ignition::gazebo::systems::Thermal">
-        <temperature>295.0</temperature>
-      </plugin> -->
-    <!-- </include> -->                                       
 
     <include>
       <pose>0 0 0 0 0 0</pose>
       <name>grasspatch</name>
       <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/depot/grasspatch</uri>
       <plugin filename="ignition-gazebo-thermal-system" name="ignition::gazebo::systems::Thermal">
-        <temperature>301.0</temperature>
+        <temperature>293.15</temperature>
       </plugin>
     </include>
+
+    <include>
+      <pose>0 -4 1 0 0 0</pose>
+      <name>wall</name>
+      <!-- <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Grey Wall</uri> -->
+      <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/depot/Grey Wall/</uri>
+      <plugin filename="ignition-gazebo-thermal-system" name="ignition::gazebo::systems::Thermal">
+        <temperature>293.15</temperature>
+      </plugin>
+    </include>
+
+    <!-- <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/NIST maze wall 240</uri> -->
+    <!-- <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Cutout Wall</uri> -->
+    <!-- Cutout Wall -->
+    <!-- Grey Wall -->
+    <!-- NIST maze wall 240 -->
+    <!-- NIST maze wall triple holes 120 -->
+
+    <model name="box">
+      <pose>-1 1 0.5 0 0 0</pose>
+      <link name="box_link">
+        <inertial>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1.0</mass>
+        </inertial>
+        <collision name="box_collision">
+          <geometry>
+            <box>
+              <size>1 1 1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="box_visual">
+          <geometry>
+            <box>
+              <size>1 1 1</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>1 0 0 1</diffuse>
+            <specular>1 0 0 1</specular>
+          </material>
+          <plugin filename="ignition-gazebo-thermal-system" name="ignition::gazebo::systems::Thermal">
+            <temperature>295.0</temperature>
+          </plugin>
+        </visual>
+      </link>
+    </model>
 
     <!-- <model name="ground_plane">
       <static>true</static>

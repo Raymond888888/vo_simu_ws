@@ -25,7 +25,7 @@
           filename="ignition-gazebo-thermal-system"
           name="ignition::gazebo::systems::Thermal">
           <heat_signature>materials/textures/J8_Thermal.png</heat_signature>
-          <max_temp>298.75</max_temp>
+          <max_temp>300.75</max_temp>
         </plugin>
       </visual>
     </link>

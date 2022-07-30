@@ -4,7 +4,7 @@
     <static>true</static>
     <link name='link'>
       <collision name='collision'>
-        <pose>0 0 0 0 0 0</pose>  
+        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <plane>
             <normal>0 0 1</normal>
@@ -30,19 +30,18 @@
             <size>15 15</size>
           </plane>
         </geometry>
-          <material>
-         <diffuse>1.0 1.0 1.0</diffuse>
+        <material>
+          <diffuse>1.0 1.0 1.0</diffuse>
           <specular>1.0 1.0 1.0</specular>
-		  <pbr>
-			<metal>
-			   <albedo_map>materials/textures/grass_dry.png</albedo_map>
-			   <normal_map>materials/textures/grass_dry.png</normal_map>
-			</metal>
-		  </pbr>
-		</material>
+          <pbr>
+            <metal>
+              <albedo_map>materials/textures/grass_dry.png</albedo_map>
+              <normal_map>materials/textures/grass_dry.png</normal_map>
+            </metal>
+          </pbr>
+        </material>
       </visual>
 
     </link>
   </model>
 </sdf>
-
