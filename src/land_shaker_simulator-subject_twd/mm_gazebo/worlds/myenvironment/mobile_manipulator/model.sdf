@@ -1,0 +1,1606 @@
+<?xml version="1.0"?>
+<sdf version='1.7'>
+  <model name='mobile_manipulator'>
+    <link name='base_footprint'>
+      <inertial>
+        <!-- <pose>0.008939 0 0.036343 0 -0 0</pose> -->
+        <pose relative_to='__model__'>0.008939 0 0.036343 0 -0 0</pose>
+        <mass>61.44</mass>
+        <inertia>
+          <ixx>7.12669</ixx>
+          <ixy>0</ixy>
+          <ixz>-0.274154</ixz>
+          <iyy>7.84415</iyy>
+          <iyz>0</iyz>
+          <izz>3.86618</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_footprint_fixed_joint_lump__vehicle_base_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.4 0.4 0.1</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode />
+          </friction>
+        </surface>
+      </collision>
+      <collision name='base_footprint_fixed_joint_lump__base_link_collision_1'>
+        <pose>0.365 0 0.28 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/ur5e/collision/base.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_footprint_fixed_joint_lump__back_left_caster_link_collision_2'>
+        <pose>-0.45 0.287 -0.04 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.05</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='base_footprint_fixed_joint_lump__back_right_caster_link_collision_3'>
+        <pose>-0.45 -0.287 -0.04 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.05</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='base_footprint_fixed_joint_lump__board_link_collision_4'>
+        <pose>-0.055 0 0.32 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/vehicle/board_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_footprint_fixed_joint_lump__front_left_caster_link_collision_5'>
+        <pose>0.45 0.287 -0.04 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.05</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='base_footprint_fixed_joint_lump__front_right_caster_link_collision_6'>
+        <pose>0.45 -0.287 -0.04 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.05</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='base_footprint_fixed_joint_lump__imu_link_collision_7'>
+        <pose>0 0 0.32 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.02 0.02 0.01</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode />
+          </friction>
+        </surface>
+      </collision>
+      <collision name='base_footprint_fixed_joint_lump__left_body_collision_8'>
+        <pose>0 0.287 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.4 0.151 0.15</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode />
+          </friction>
+        </surface>
+      </collision>
+      <collision name='base_footprint_fixed_joint_lump__left_body_fixed_idler_link_1_collision_9'>
+        <pose>-0.36 0.287 0 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.15</length>
+            <radius>0.08</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode />
+          </friction>
+        </surface>
+      </collision>
+      <collision name='base_footprint_fixed_joint_lump__left_body_fixed_idler_link_2_collision_10'>
+        <pose>0.445 0.287 0.102 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.15</length>
+            <radius>0.07</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode />
+          </friction>
+        </surface>
+      </collision>
+      <collision name='base_footprint_fixed_joint_lump__left_body_fixed_idler_link_3_collision_11'>
+        <pose>0.00953 0.287 0.16618 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.15</length>
+            <radius>0.062</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode />
+          </friction>
+        </surface>
+      </collision>
+      <collision name='base_footprint_fixed_joint_lump__left_sprocket_collision_12'>
+        <pose>0.36 0.287287 -0.018 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.064</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode />
+          </friction>
+        </surface>
+      </collision>
+      <collision name='base_footprint_fixed_joint_lump__arm_connector_collision_13'>
+        <pose>-0.479 0 0 1.5708 1 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.25</length>
+            <radius>0.035</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode />
+          </friction>
+        </surface>
+      </collision>
+      <collision name='base_footprint_fixed_joint_lump__arm_body_collision_14'>
+        <pose>-0.580577 0 0.158197 0 1 0</pose>
+        <geometry>
+          <box>
+            <size>0.375 0.18 0.11</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode />
+          </friction>
+        </surface>
+      </collision>
+      <collision name='base_footprint_fixed_joint_lump__idler_collision_15'>
+        <pose>-0.682154 0 0.316393 1.5708 1 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.18</length>
+            <radius>0.055</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode />
+          </friction>
+        </surface>
+      </collision>
+      <collision name='base_footprint_fixed_joint_lump__sprocket_collision_16'>
+        <pose>-0.479 0 0 1.5708 1 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.18</length>
+            <radius>0.055</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode />
+          </friction>
+        </surface>
+      </collision>
+      <collision name='base_footprint_fixed_joint_lump__pusher_visual_left_collision_17'>
+        <pose>-0.27 0.12 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.5 0.025 0.08</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode />
+          </friction>
+        </surface>
+      </collision>
+      <collision name='base_footprint_fixed_joint_lump__pusher_visual_right_collision_18'>
+        <pose>-0.27 -0.12 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.5 0.025 0.08</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode />
+          </friction>
+        </surface>
+      </collision>
+      <collision name='base_footprint_fixed_joint_lump__right_body_collision_19'>
+        <pose>0 -0.287 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.4 0.151 0.15</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode />
+          </friction>
+        </surface>
+      </collision>
+      <collision name='base_footprint_fixed_joint_lump__right_body_fixed_idler_link_1_collision_20'>
+        <pose>-0.36 -0.287 0 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.15</length>
+            <radius>0.08</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode />
+          </friction>
+        </surface>
+      </collision>
+      <collision name='base_footprint_fixed_joint_lump__right_body_fixed_idler_link_2_collision_21'>
+        <pose>0.445 -0.287 0.102 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.15</length>
+            <radius>0.07</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode />
+          </friction>
+        </surface>
+      </collision>
+      <collision name='base_footprint_fixed_joint_lump__right_body_fixed_idler_link_3_collision_22'>
+        <pose>0.00953 -0.287 0.16618 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.15</length>
+            <radius>0.062</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode />
+          </friction>
+        </surface>
+      </collision>
+      <collision name='base_footprint_fixed_joint_lump__right_sprocket_collision_23'>
+        <pose>0.36 -0.287287 -0.018 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.064</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode />
+          </friction>
+        </surface>
+      </collision>
+      <collision name='base_footprint_fixed_joint_lump__support_link_collision_24'>
+        <pose>-0.2 0 0.32 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/vehicle/support_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_footprint_fixed_joint_lump__lidar_support_link_collision_25'>
+        <pose>-0.06 0 1 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/vehicle/lidar_support.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name='base_footprint_fixed_joint_lump__velodyne_base_link_collision_26'>
+        <pose>-0.06 0 1.03585 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.0717</length>
+            <radius>0.0516</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name='base_footprint_fixed_joint_imu_base_link_collision_27'>
+        <pose>-0.06 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.0717</length>
+            <radius>0.0516</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <visual name='base_footprint_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.001 0.001 0.001</size>
+          </box>
+        </geometry>
+      </visual>
+      <visual name='base_footprint_fixed_joint_lump__vehicle_base_link_visual_1'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/vehicle/base_meter.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>///usr/share/gazebo-11/media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='base_footprint_fixed_joint_lump__base_link_visual_2'>
+        <pose>0.365 0 0.28 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/ur5e/visual/base.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_footprint_fixed_joint_lump__board_link_visual_3'>
+        <pose>-0.055 0 0.32 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/vehicle/board_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_footprint_fixed_joint_lump__imu_link_visual_4'>
+        <pose>0 0 0.32 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.02 0.02 0.01</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>///usr/share/gazebo-11/media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='base_footprint_fixed_joint_lump__left_body_visual_5'>
+        <pose>0 0.287 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/vehicle/track_entity_meter.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>///usr/share/gazebo-11/media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='base_footprint_fixed_joint_lump__left_body_fixed_idler_link_1_visual_6'>
+        <pose>-0.36 0.287 0 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.15</length>
+            <radius>0.08</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>///usr/share/gazebo-11/media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='base_footprint_fixed_joint_lump__left_body_fixed_idler_link_2_visual_7'>
+        <pose>0.445 0.287 0.102 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.15</length>
+            <radius>0.07</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>///usr/share/gazebo-11/media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='base_footprint_fixed_joint_lump__left_body_fixed_idler_link_3_visual_8'>
+        <pose>0.00953 0.287 0.16618 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.15</length>
+            <radius>0.062</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>///usr/share/gazebo-11/media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='base_footprint_fixed_joint_lump__left_sprocket_visual_9'>
+        <pose>0.36 0.287287 -0.018 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.15</length>
+            <radius>0.064</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>///usr/share/gazebo-11/media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='base_footprint_fixed_joint_lump__arm_connector_visual_10'>
+        <pose>-0.479 0 0 1.5708 1 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.25</length>
+            <radius>0.035</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>///usr/share/gazebo-11/media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='base_footprint_fixed_joint_lump__arm_body_visual_11'>
+        <pose>-0.580577 0 0.158197 0 1 0</pose>
+        <geometry>
+          <box>
+            <size>0.375 0.18 0.11</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>///usr/share/gazebo-11/media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='base_footprint_fixed_joint_lump__idler_visual_12'>
+        <pose>-0.682154 0 0.316393 1.5708 1 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.18</length>
+            <radius>0.055</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>///usr/share/gazebo-11/media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='base_footprint_fixed_joint_lump__sprocket_visual_13'>
+        <pose>-0.479 0 0 1.5708 1 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.18</length>
+            <radius>0.055</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>///usr/share/gazebo-11/media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='base_footprint_fixed_joint_lump__pusher_visual_left_visual_14'>
+        <pose>-0.27 0.12 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.5 0.025 0.08</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>///usr/share/gazebo-11/media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='base_footprint_fixed_joint_lump__pusher_visual_right_visual_15'>
+        <pose>-0.27 -0.12 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.5 0.025 0.08</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>///usr/share/gazebo-11/media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='base_footprint_fixed_joint_lump__right_body_visual_16'>
+        <pose>0 -0.287 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/vehicle/track_entity_meter.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>///usr/share/gazebo-11/media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='base_footprint_fixed_joint_lump__right_body_fixed_idler_link_1_visual_17'>
+        <pose>-0.36 -0.287 0 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.15</length>
+            <radius>0.08</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>///usr/share/gazebo-11/media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='base_footprint_fixed_joint_lump__right_body_fixed_idler_link_2_visual_18'>
+        <pose>0.445 -0.287 0.102 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.15</length>
+            <radius>0.07</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>///usr/share/gazebo-11/media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='base_footprint_fixed_joint_lump__right_body_fixed_idler_link_3_visual_19'>
+        <pose>0.00953 -0.287 0.16618 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.15</length>
+            <radius>0.062</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>///usr/share/gazebo-11/media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='base_footprint_fixed_joint_lump__right_sprocket_visual_20'>
+        <pose>0.36 -0.287287 -0.018 1.5708 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.15</length>
+            <radius>0.064</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>///usr/share/gazebo-11/media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='base_footprint_fixed_joint_lump__support_link_visual_21'>
+        <pose>-0.2 0 0.32 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/vehicle/support_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_footprint_fixed_joint_lump__lidar_support_link_visual_22'>
+        <pose>-0.06 0 1 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/vehicle/lidar_support.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_footprint_fixed_joint_lump__velodyne_base_link_visual_23'>
+        <pose>-0.06 0 1 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>///opt/ros/noetic/share/velodyne_description/meshes/VLP16_base_1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_footprint_fixed_joint_lump__velodyne_base_link_visual_24'>
+        <pose>-0.06 0 1 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>///opt/ros/noetic/share/velodyne_description/meshes/VLP16_base_2.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_footprint_fixed_joint_lump__velodyne_visual_25'>
+        <pose>-0.06 0 1 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>///opt/ros/noetic/share/velodyne_description/meshes/VLP16_scan.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='base_footprint_fixed_joint_imu_visual_26'>
+        <pose>-0.06 0 0.3 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.02 0.02 0.01</size>
+            <size>0.2 0.2 0.1</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>///usr/share/gazebo-11/media/materials/scripts/gazebo.materiall</uri>
+          </script>
+        </material>
+
+        <!-- <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>///opt/ros/noetic/share/velodyne_description/meshes/VLP16_scan.dae</uri>
+          </mesh>
+        </geometry> -->
+      </visual>
+
+      <gravity>1</gravity>
+      <sensor name='imu_sensor' type='imu'>
+        <always_on>1</always_on>
+        <update_rate>100</update_rate>
+        <visualize>true</visualize>
+        <topic>__default_topic__</topic>
+        <plugin filename="ignition-gazebo-imu-system" name="ignition::gazebo::systems::Imu">
+          <topicName>imu/data</topicName>
+          <bodyName>imu_link</bodyName>
+          <updateRateHZ>110.0</updateRateHZ>
+          <gaussianNoise>0.0</gaussianNoise>
+          <xyzOffset>0 0 0</xyzOffset>
+          <rpyOffset>0 0 0</rpyOffset>
+          <frameName>imu_link</frameName>
+          <initialOrientationAsReference>0</initialOrientationAsReference>
+        </plugin>
+        <pose>0 0 0.32 0 -0 0</pose>
+      </sensor>
+
+
+    </link>
+    <joint name='shoulder_pan_joint' type='revolute'>
+      <pose relative_to='base_footprint'>0.365 0 0.443 0 -0 0</pose>
+      <parent>base_footprint</parent>
+      <child>shoulder_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>3.14159</upper>
+          <effort>150</effort>
+          <velocity>3.14</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='shoulder_link'>
+      <pose relative_to='shoulder_pan_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>3.7</mass>
+        <inertia>
+          <ixx>0.0102675</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0102675</iyy>
+          <iyz>0</iyz>
+          <izz>0.00666</izz>
+        </inertia>
+      </inertial>
+      <collision name='shoulder_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/ur5e/collision/shoulder.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode />
+          </friction>
+        </surface>
+      </collision>
+      <visual name='shoulder_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/ur5e/visual/shoulder.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+    <joint name='shoulder_lift_joint' type='revolute'>
+      <pose relative_to='shoulder_link'>0 0.138 0 0 1.5708 0</pose>
+      <parent>shoulder_link</parent>
+      <child>upper_arm_link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>3.14159</upper>
+          <effort>150</effort>
+          <velocity>3.14</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='upper_arm_link'>
+      <pose relative_to='shoulder_lift_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0.2125 0 -0 0</pose>
+        <mass>8.393</mass>
+        <inertia>
+          <ixx>0.133886</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.133886</iyy>
+          <iyz>0</iyz>
+          <izz>0.0151074</izz>
+        </inertia>
+      </inertial>
+      <collision name='upper_arm_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/ur5e/collision/upperarm.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode />
+          </friction>
+        </surface>
+      </collision>
+      <visual name='upper_arm_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/ur5e/visual/upperarm.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+    <joint name='elbow_joint' type='revolute'>
+      <pose relative_to='upper_arm_link'>0 -0.131 0.425 0 -0 0</pose>
+      <parent>upper_arm_link</parent>
+      <child>forearm_link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>3.14159</upper>
+          <effort>150</effort>
+          <velocity>3.14</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='forearm_link'>
+      <pose relative_to='elbow_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0.196 0 -0 0</pose>
+        <mass>2.275</mass>
+        <inertia>
+          <ixx>0.0311796</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0311796</iyy>
+          <iyz>0</iyz>
+          <izz>0.004095</izz>
+        </inertia>
+      </inertial>
+      <collision name='forearm_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/ur5e/collision/forearm.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode />
+          </friction>
+        </surface>
+      </collision>
+      <visual name='forearm_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/ur5e/visual/forearm.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+    <joint name='wrist_1_joint' type='revolute'>
+      <pose relative_to='forearm_link'>0 0 0.392 0 1.5708 0</pose>
+      <parent>forearm_link</parent>
+      <child>wrist_1_link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>3.14159</upper>
+          <effort>28</effort>
+          <velocity>6.28</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wrist_1_link'>
+      <pose relative_to='wrist_1_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0.127 0 0 -0 0</pose>
+        <mass>1.219</mass>
+        <inertia>
+          <ixx>0.0025599</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0025599</iyy>
+          <iyz>0</iyz>
+          <izz>0.0021942</izz>
+        </inertia>
+      </inertial>
+      <collision name='wrist_1_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/ur5e/collision/wrist1.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode />
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wrist_1_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/ur5e/visual/wrist1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+    <joint name='wrist_2_joint' type='revolute'>
+      <pose relative_to='wrist_1_link'>0 0.127 0 0 -0 0</pose>
+      <parent>wrist_1_link</parent>
+      <child>wrist_2_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>3.14159</upper>
+          <effort>28</effort>
+          <velocity>6.28</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wrist_2_link'>
+      <pose relative_to='wrist_2_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0.1 0 -0 0</pose>
+        <mass>1.219</mass>
+        <inertia>
+          <ixx>0.0025599</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0025599</iyy>
+          <iyz>0</iyz>
+          <izz>0.0021942</izz>
+        </inertia>
+      </inertial>
+      <collision name='wrist_2_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/ur5e/collision/wrist2.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode />
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wrist_2_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/ur5e/visual/wrist2.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <self_collide>1</self_collide>
+    </link>
+    <joint name='wrist_3_joint' type='revolute'>
+      <pose relative_to='wrist_2_link'>0 0 0.1 0 -0 0</pose>
+      <parent>wrist_2_link</parent>
+      <child>wrist_3_link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-3.14159</lower>
+          <upper>3.14159</upper>
+          <effort>28</effort>
+          <velocity>6.28</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wrist_3_link'>
+      <pose relative_to='wrist_3_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.001767 0.159508 0.049393 1.5708 -0 0</pose>
+        <mass>0.7859</mass>
+        <inertia>
+          <ixx>0.0088462</ixx>
+          <ixy>4.44663e-05</ixy>
+          <ixz>-9.54295e-05</ixz>
+          <iyy>0.00647529</iyy>
+          <iyz>0.00081276</iyz>
+          <izz>0.00712114</izz>
+        </inertia>
+      </inertial>
+      <collision name='wrist_3_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/ur5e/collision/wrist3.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode />
+          </friction>
+        </surface>
+      </collision>
+      <collision name='wrist_3_link_fixed_joint_lump__ee_link_collision_1'>
+        <pose>-0 0.09 0 0 -0 1.5708</pose>
+        <geometry>
+          <box>
+            <size>0.01 0.01 0.01</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode />
+          </friction>
+        </surface>
+      </collision>
+      <collision name='wrist_3_link_fixed_joint_lump__camera_flange_link_collision_2'>
+        <pose>0.045 0.1 0.022 1.5708 -0 -3.14159</pose>
+        <geometry>
+          <mesh filename="///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_description/meshes/d435/camera_flange_link.STL" scale="0.001 0.001 0.001" />
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode />
+          </friction>
+        </surface>
+      </collision>
+      <collision name='wrist_3_link_fixed_joint_lump__camera_link_collision_3'>
+        <pose>-0.00025 0.19055 0.0675 1.5708 -0 -3.14159</pose>
+        <geometry>
+          <mesh filename="///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_description/meshes/d435/d435.dae" scale="1 1 1" />
+        </geometry>
+        <surface>
+          <contact>
+            <ode />
+          </contact>
+          <friction>
+            <ode />
+          </friction>
+        </surface>
+      </collision>
+      <visual name='wrist_3_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/ur5e/visual/wrist3.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='wrist_3_link_fixed_joint_lump__camera_flange_link_visual_1'>
+        <pose>0.045 0.1 0.022 1.5708 -0 -3.14159</pose>
+        <geometry>
+          <mesh filename="///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_description/meshes/d435/camera_flange_link.STL" scale="0.001 0.001 0.001" />
+        </geometry>
+      </visual>
+      <visual name='wrist_3_link_fixed_joint_lump__camera_link_visual_2'>
+        <pose>-0.00025 0.19055 0.0675 1.5708 -0 -3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_description/meshes/d435/d435.dae</uri>
+          </mesh>
+          <mesh filename="///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_description/meshes/d435/d435.dae" scale="1 1 1" />
+        </geometry>
+      </visual>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+      <sensor name='color' type='camera'>
+        <camera name='color_optical_frame'>
+          <horizontal_fov>1.047</horizontal_fov>
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>RGB_INT8</format>
+          </image>
+          <clip>
+            <near>0.1</near>
+            <far>100</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.007</stddev>
+          </noise>
+        </camera>
+        <always_on>1</always_on>
+        <update_rate>60</update_rate>
+        <visualize>1</visualize>
+        <pose>-0.03275 0.19055 0.0675 0 4e-06 1.5708</pose>
+      </sensor>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+      <sensor name='depth' type='depth'>
+        <camera name='depth_optical_frame'>
+          <horizontal_fov>1.047</horizontal_fov>
+          <image>
+            <width>640</width>
+            <height>480</height>
+          </image>
+          <clip>
+            <near>0.1</near>
+            <far>100</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.1</stddev>
+          </noise>
+        </camera>
+        <always_on>1</always_on>
+        <update_rate>60</update_rate>
+        <visualize>0</visualize>
+        <pose>-0.00025 0.19055 0.0675 0 4e-06 1.5708</pose>
+      </sensor>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+      <sensor name='ired1' type='camera'>
+        <camera name='infra1_optical_frame'>
+          <horizontal_fov>1.047</horizontal_fov>
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>L_INT8</format>
+          </image>
+          <clip>
+            <near>0.1</near>
+            <far>100</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.05</stddev>
+          </noise>
+        </camera>
+        <always_on>1</always_on>
+        <update_rate>60</update_rate>
+        <visualize>0</visualize>
+        <pose>0.03225 0.19055 0.0675 0 4e-06 1.5708</pose>
+      </sensor>
+      <self_collide>1</self_collide>
+      <enable_wind>0</enable_wind>
+      <kinematic>0</kinematic>
+      <sensor name='ired2' type='camera'>
+        <camera name='infra2_optical_frame'>
+          <horizontal_fov>1.047</horizontal_fov>
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>L_INT8</format>
+          </image>
+          <clip>
+            <near>0.1</near>
+            <far>100</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.05</stddev>
+          </noise>
+        </camera>
+        <always_on>1</always_on>
+        <update_rate>60</update_rate>
+        <visualize>0</visualize>
+        <pose>-0.01775 0.19055 0.0675 0 4e-06 1.5708</pose>
+      </sensor>
+    </link>
+    <link name="thermal_camera">
+      <pose relative_to="base_footprint">0.6 0 0.85 0 0 0</pose> <!--angles are in radian-->
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.1 0.1 0.1</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.1 0.1 0.1</size>
+          </box>
+        </geometry>
+      </visual>
+      <sensor name="thermal_camera" type="thermal">
+        <camera>
+          <horizontal_fov>1.047</horizontal_fov>
+          <image>
+            <width>320</width>
+            <height>240</height>
+            <format>L16</format>
+          </image>
+          <clip>
+            <near>0.1</near>
+            <far>100</far>
+          </clip>
+        </camera>
+        <always_on>1</always_on>
+        <update_rate>30</update_rate>
+        <visualize>true</visualize>
+        <topic>thermal_camera</topic>
+      </sensor>
+    </link>
+    <joint name='thermal_camera_joint' type='revolute'>
+      <parent>base_footprint</parent>
+      <child>thermal_camera</child>
+      <axis>
+        <xyz expressed_in='__model__'>0 1 0</xyz>
+        <limit>
+          <lower>-1.79769e+308</lower> <!--negative infinity-->
+          <upper>1.79769e+308</upper> <!--positive infinity-->
+        </limit>
+      </axis>
+    </joint>
+
+    <plugin filename="ImageDisplay" name="Image Display">
+      <ignition-gui>
+        <title>Thermal camera</title>
+        <property key="state" type="string">floating</property>
+        <property type="double" key="width">350</property>
+        <property type="double" key="height">315</property>
+      </ignition-gui>
+      <topic>thermal_camera</topic>
+      <topic_picker>false</topic_picker>
+    </plugin>
+    <gazebo reference="${namespace}/${camera_frame_name}/thermal_camera_link">
+      <sensor type="camera" name="mrs_thermal_camera_sensor">
+        <update_rate>${frame_rate}</update_rate>
+        <camera>
+          <horizontal_fov>${hfov}</horizontal_fov>
+          <image>
+            <format>R8G8B8</format>
+            <width>${3 * image_width}</width>
+            <height>${3 * image_height}</height>
+          </image>
+          <clip>
+            <near>0.1</near>
+            <far>300</far>
+          </clip>
+        </camera>
+        <plugin name="thermal_camera_controller" filename="libMRSGazeboThermalCameraPlugin.so">
+          <alwaysOn>true</alwaysOn>
+          <cameraName>${camera_suffix}</cameraName>
+          <updateRate>${frame_rate}</updateRate>
+          <imageTopicName>${camera_topic_name}/rgb_image</imageTopicName>
+          <cameraInfoTopicName>${camera_topic_name}/camera_info</cameraInfoTopicName>
+          <rawTemperatureTopicName>${camera_topic_name}/raw_temp_array</rawTemperatureTopicName>
+          <surroundingTemperature>20</surroundingTemperature>
+          <maximalTemperature>300</maximalTemperature>
+          <minimalTemperatureGreenColor>0.2</minimalTemperatureGreenColor>
+          <noiseStdDev>4.0</noiseStdDev>
+          <noiseStdDevMaxTemp>20.0</noiseStdDevMaxTemp>
+          <frameName>${camera_frame_name}</frameName>
+          <parentFrameName>${parent_frame_name}</parentFrameName>
+          <sensorBaseFrameName>${sensor_base_frame_name}</sensorBaseFrameName>
+          <x>${x}</x>
+          <y>${y}</y>
+          <z>${z}</z>
+          <roll>${roll}</roll>
+          <pitch>${pitch}</pitch>
+          <yaw>${yaw}</yaw>
+        </plugin>
+      </sensor>
+    </gazebo>
+
+
+    <joint name='left_wheel_joint' type='revolute'>
+      <!--continous joint is not supported yet-->
+      <pose relative_to='left_wheel' />
+      <parent>base_footprint</parent>
+      <child>left_wheel</child>
+      <axis>
+        <xyz expressed_in='__model__'>0 1 0</xyz> <!--can be descired to any frame or even arbitrary frames-->
+        <limit>
+          <lower>-1.79769e+308</lower> <!--negative infinity-->
+          <upper>1.79769e+308</upper> <!--positive infinity-->
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name='right_wheel_joint' type='revolute'>
+      <pose relative_to='right_wheel' />
+      <parent>base_footprint</parent>
+      <child>right_wheel</child>
+      <axis>
+        <xyz expressed_in='__model__'>0 1 0</xyz>
+        <limit>
+          <lower>-1.79769e+308</lower> <!--negative infinity-->
+          <upper>1.79769e+308</upper> <!--positive infinity-->
+        </limit>
+      </axis>
+    </joint>
+
+    <link name='left_wheel'>
+      <pose relative_to="base_footprint">-0.5 0.6 0.1 -1.5707 0 0</pose> <!--angles are in radian-->
+      <inertial>
+        <mass>1</mass>
+        <inertia>
+          <ixx>0.145833</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.145833</iyy>
+          <iyz>0</iyz>
+          <izz>0.125</izz>
+        </inertia>
+      </inertial>
+      <visual name='visual'>
+        <geometry>
+          <cylinder>
+            <radius>0.2</radius>
+            <length>0.2</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>1.0 0.0 0.0 1</ambient>
+          <diffuse>1.0 0.0 0.0 1</diffuse>
+          <specular>1.0 0.0 0.0 1</specular>
+        </material>
+      </visual>
+      <collision name='collision'>
+        <geometry>
+          <cylinder>
+            <radius>0.2</radius>
+            <length>0.2</length>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name='right_wheel'>
+      <pose relative_to="base_footprint">-0.5 -0.6 0.1 -1.5707 0 0</pose> <!--angles are in radian-->
+      <inertial>
+        <mass>1</mass>
+        <inertia>
+          <ixx>0.145833</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.145833</iyy>
+          <iyz>0</iyz>
+          <izz>0.125</izz>
+        </inertia>
+      </inertial>
+      <visual name='visual'>
+        <geometry>
+          <cylinder>
+            <radius>0.2</radius>
+            <length>0.2</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>1.0 0.0 0.0 1</ambient>
+          <diffuse>1.0 0.0 0.0 1</diffuse>
+          <specular>1.0 0.0 0.0 1</specular>
+        </material>
+      </visual>
+      <collision name='collision'>
+        <geometry>
+          <cylinder>
+            <radius>0.2</radius>
+            <length>0.2</length>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+
+    <plugin filename="libignition-gazebo-diff-drive-system.so" name="ignition::gazebo::systems::DiffDrive">
+      <left_joint>left_wheel_joint</left_joint>
+      <right_joint>right_wheel_joint</right_joint>
+      <wheel_separation>1.2</wheel_separation>
+      <wheel_radius>0.2</wheel_radius>
+      <odom_publish_frequency>1</odom_publish_frequency>
+      <topic>cmd_vel</topic>
+    </plugin>
+    <!-- Moving Forward-->
+    <plugin filename="libignition-gazebo-triggered-publisher-system.so" name="ignition::gazebo::systems::TriggeredPublisher">
+      <input type="ignition.msgs.Int32" topic="/keyboard/keypress">
+        <match field="data">16777235</match>
+      </input>
+      <output type="ignition.msgs.Twist" topic="/cmd_vel">
+        linear: {x: 0.5}, angular: {z: 0.0}
+      </output>
+    </plugin>
+
+    <!-- Moving Backward-->
+    <plugin filename="libignition-gazebo-triggered-publisher-system.so" name="ignition::gazebo::systems::TriggeredPublisher">
+      <input type="ignition.msgs.Int32" topic="/keyboard/keypress">
+        <match field="data">16777237</match>
+      </input>
+      <output type="ignition.msgs.Twist" topic="/cmd_vel">
+        linear: {x: -0.5}, angular: {z: 0.0}
+      </output>
+    </plugin>
+
+    <!-- Rotating right-->
+    <plugin filename="libignition-gazebo-triggered-publisher-system.so" name="ignition::gazebo::systems::TriggeredPublisher">
+      <input type="ignition.msgs.Int32" topic="/keyboard/keypress">
+        <match field="data">16777236</match>
+      </input>
+      <output type="ignition.msgs.Twist" topic="/cmd_vel">
+        linear: {x: 0.0}, angular: {z: -0.5}
+      </output>
+    </plugin>
+
+    <!--Rotating left-->
+    <plugin filename="libignition-gazebo-triggered-publisher-system.so" name="ignition::gazebo::systems::TriggeredPublisher">
+      <input type="ignition.msgs.Int32" topic="/keyboard/keypress">
+        <match field="data">16777234</match>
+      </input>
+      <output type="ignition.msgs.Twist" topic="/cmd_vel">
+        linear: {x: 0.0}, angular: {z: 0.5}
+      </output>
+    </plugin>
+
+  </model>
+</sdf>

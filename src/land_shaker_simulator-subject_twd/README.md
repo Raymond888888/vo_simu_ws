@@ -67,5 +67,5 @@ roslaunch mm_gazebo ls_bringup.launch  model_pose:="-z 0.4" world_name:=`rospack
 
 
 
-roslaunch mm_gazebo ls_bringup.launch world_name:=`rospack find mm_gazebo`/worlds/depot/depot.world  model_pose:="-x 2 -y 2 -z 0.15" teleop_base:=false 
-export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:`rospack find mm_gazebo`/worlds/depot
+roslaunch mm_gazebo ls_bringup.launch world_name:=`rospack find mm_gazebo`/worlds/myenvironment/myenvironment.world  model_pose:="-x 2 -y 2 -z 0.15" teleop_base:=false 
+export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:`rospack find mm_gazebo`/worlds/myenvironment
