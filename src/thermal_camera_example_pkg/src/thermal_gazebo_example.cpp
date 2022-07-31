@@ -27,7 +27,6 @@ void OnImage(const ignition::msgs::Image &_msg) {
     auto *thermalBuffer = new uint16_t[thermalSamples];
     memcpy(thermalBuffer, _msg.data().c_str(), thermalBufferSize);
     for (auto r = 0; r < _msg.height(); ++r) {
-        
         // need to figure out the row offset in order to mimic 2D array access
         // with 1D array indexing
         auto rowOffset = r * _msg.width();
@@ -40,10 +39,10 @@ void OnImage(const ignition::msgs::Image &_msg) {
     }
 
     cv::Mat Imageresult(_msg.height(), _msg.width(), CV_16UC1, thermalBuffer);
-    // std::cout << "height" << _msg.height() << "width" << _msg.width() << std::endl;
+    // cv::Mat Imageresult(_msg.height(), _msg.width(), CV_8UC1, thermalBuffer);
 
     double fpstimestart = cv::getTickCount();
-    std::cout << "fps:" << (cv::getTickFrequency() / (double)(fpstimestart - last_fps_time)) << std::endl;
+    ROS_INFO("fps:%lf", (cv::getTickFrequency() / (double)(fpstimestart - last_fps_time)));
     last_fps_time = fpstimestart;
 
     cnt++;
@@ -66,23 +65,24 @@ void imuCb(const ignition::msgs::IMU &_msg) {
     std::mutex imuMsgMutex;
     // std::lock_guard<std::mutex> lock(this->imuMsgMutex);
     // const ::std::string name = _msg.entity_name();
-    // std::cout << "name=" << name << std::endl;
     ignition::msgs::Vector3d angular_v = _msg.angular_velocity();
-    std::cout << "angular_velocity:" << angular_v.x() << std::endl;
+    ROS_INFO("angular_velocity:%lf", angular_v.z());
     ignition::msgs::Quaternion Q_orientation = _msg.orientation();
-    std::cout << "Q_orientation x:" << Q_orientation.x() << std::endl;
-    std::cout << "Q_orientation y:" << Q_orientation.y() << std::endl;
-    std::cout << "Q_orientation z:" << Q_orientation.z() << std::endl;
-    std::cout << "Q_orientation w:" << Q_orientation.w() << std::endl;
+    ROS_INFO("Q_orientation x:%lf", Q_orientation.x());
+    ROS_INFO("Q_orientation y:%lf", Q_orientation.y());
+    ROS_INFO("Q_orientation z:%lf", Q_orientation.z());
+    ROS_INFO("Q_orientation w:%lf", Q_orientation.w());
 }
 int main(int argc, char **argv) {
     ignition::transport::Node thermal_node;
     ignition::transport::Node imu_node;
     if (!thermal_node.Subscribe("/thermal_camera", &OnImage)) {
+        ROS_ERROR("Error subscribing to the thermal camera topic");
         std::cerr << "Error subscribing to the thermal camera topic" << std::endl;
         return -1;
     }
     if (!imu_node.Subscribe("/imu_topic", &imuCb)) {
+        ROS_ERROR("Error subscribing to the IMU topic");
         std::cerr << "Error subscribing to the IMU topic" << std::endl;
         return -1;
     }
