@@ -24,7 +24,7 @@
           filename="ignition-gazebo-thermal-system"
           name="ignition::gazebo::systems::Thermal">
           <heat_signature>materials/textures/RescueRandy_Thermal.png</heat_signature>
-          <max_temp>305</max_temp>
+          <max_temp>307</max_temp>
         </plugin>
       </visual>
     </link>
