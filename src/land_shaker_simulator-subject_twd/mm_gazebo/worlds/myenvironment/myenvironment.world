@@ -1278,7 +1278,7 @@
       </joint>
 
       <link name='left_wheel'>
-        <pose relative_to="base_footprint">-0.25 0.3 -0.09 -1.5707 0 0</pose> <!--angles are in radian-->
+        <pose relative_to="base_footprint">0 0.3 -0.09 -1.5707 0 0</pose> <!--angles are in radian-->
         <inertial>
           <mass>1</mass>
           <inertia>
@@ -1314,7 +1314,7 @@
       </link>
 
       <link name='right_wheel'>
-        <pose relative_to="base_footprint">-0.25 -0.3 -0.09 -1.5707 0 0</pose> <!--angles are in radian-->
+        <pose relative_to="base_footprint">0 -0.3 -0.09 -1.5707 0 0</pose> <!--angles are in radian-->
         <inertial>
           <mass>1</mass>
           <inertia>
@@ -1348,11 +1348,11 @@
           </geometry>
         </collision>
       </link>
-      <frame name="caster_frame" attached_to='base_footprint'>
+      <frame name="caster1_frame" attached_to='base_footprint'>
         <pose>0.4 0 -0.09 0 0 0</pose>
       </frame>
-      <link name='caster'>
-        <pose relative_to='caster_frame' />
+      <link name='caster1'>
+        <pose relative_to='caster1_frame' />
         <inertial>
           <mass>1</mass>
           <inertia>
@@ -1384,9 +1384,50 @@
           </geometry>
         </collision>
       </link>
-      <joint name='caster_wheel' type='ball'>
+      <joint name='caster1_wheel' type='ball'>
         <parent>base_footprint</parent>
-        <child>caster</child>
+        <child>caster1</child>
+      </joint>
+
+      <frame name="caster2_frame" attached_to='base_footprint'>
+        <pose>-0.4 0 -0.09 0 0 0</pose>
+      </frame>
+      <link name='caster2'>
+        <pose relative_to='caster2_frame' />
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>0.1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.1</iyy>
+            <iyz>0</iyz>
+            <izz>0.1</izz>
+          </inertia>
+        </inertial>
+        <visual name='visual'>
+          <geometry>
+            <sphere>
+              <radius>0.01</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0.0 0.0 0.0 0</ambient>
+            <diffuse>0.0 0.0 0.0 0</diffuse>
+            <specular>0.0 0.0 0.0 </specular>
+          </material>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <sphere>
+              <radius>0.01</radius>
+            </sphere>
+          </geometry>
+        </collision>
+      </link>
+      <joint name='caster2_wheel' type='ball'>
+        <parent>base_footprint</parent>
+        <child>caster2</child>
       </joint>
 
 
@@ -1401,47 +1442,57 @@
       <!-- Moving Forward-->
       <plugin filename="libignition-gazebo-triggered-publisher-system.so" name="ignition::gazebo::systems::TriggeredPublisher">
         <input type="ignition.msgs.Int32" topic="/keyboard/keypress">
-          <match field="data">16777235</match>
+          <match field="data">87</match>
         </input>
         <output type="ignition.msgs.Twist" topic="/cmd_vel">
-          linear: {x: 1.0}, angular: {z: 0.0}
+          linear: {x: 0.6}, angular: {z: 0.0}
         </output>
       </plugin>
 
       <!-- Moving Backward-->
       <plugin filename="libignition-gazebo-triggered-publisher-system.so" name="ignition::gazebo::systems::TriggeredPublisher">
         <input type="ignition.msgs.Int32" topic="/keyboard/keypress">
-          <match field="data">16777237</match>
+          <match field="data">83</match>
         </input>
         <output type="ignition.msgs.Twist" topic="/cmd_vel">
-          linear: {x: -1.0}, angular: {z: 0.0}
+          linear: {x: -0.6}, angular: {z: 0.0}
         </output>
       </plugin>
 
       <!-- Rotating right-->
       <plugin filename="libignition-gazebo-triggered-publisher-system.so" name="ignition::gazebo::systems::TriggeredPublisher">
         <input type="ignition.msgs.Int32" topic="/keyboard/keypress">
-          <match field="data">16777236</match>
+          <match field="data">68</match>
         </input>
         <output type="ignition.msgs.Twist" topic="/cmd_vel">
-          linear: {x: 0.0}, angular: {z: -4.5}
+          linear: {x: 0.0}, angular: {z: -0.6}
         </output>
       </plugin>
 
       <!--Rotating left-->
       <plugin filename="libignition-gazebo-triggered-publisher-system.so" name="ignition::gazebo::systems::TriggeredPublisher">
         <input type="ignition.msgs.Int32" topic="/keyboard/keypress">
-          <match field="data">16777234</match>
+          <match field="data">65</match>
         </input>
         <output type="ignition.msgs.Twist" topic="/cmd_vel">
-          linear: {x: 0.0}, angular: {z: 4.5}
+          linear: {x: 0.0}, angular: {z: 0.6}
+        </output>
+      </plugin>
+
+    <!--stop-->
+      <plugin filename="libignition-gazebo-triggered-publisher-system.so" name="ignition::gazebo::systems::TriggeredPublisher">
+      <input type="ignition.msgs.Int32" topic="/keyboard/keypress">
+        <match field="data">16777249</match>
+      </input>
+      <output type="ignition.msgs.Twist" topic="/cmd_vel">
+          linear: {x: 0.0}, angular: {z: 0.0}
         </output>
       </plugin>
     </model>
 
     <include>
-      <pose>5 2 0 0 0 0</pose>
-      <name>human_'rescue_randy'</name>
+      <pose>6 -6 0 0 0 3.14</pose>
+      <name>human0_'rescue_randy'</name>
       <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/Rescue Randy/</uri>
     </include>
 
