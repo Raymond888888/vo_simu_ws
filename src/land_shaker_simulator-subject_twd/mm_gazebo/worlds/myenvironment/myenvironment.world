@@ -158,25 +158,25 @@
     </include>
 
     <include>
-      <pose>6 -6 0 0 0 3.14</pose>
+      <pose>6 -6.5 0 0 0 3.14</pose>
       <name>human0_'rescue_randy'</name>
       <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/Rescue Randy/</uri>
     </include>
 
     <include>
-      <pose>1 4.4 0 0 0 3.14</pose>
+      <pose>1 4.2 0 0 0 3.14</pose>
       <name>human1_'rescue_randy_sitting'</name>
       <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/Rescue Randy Sitting/</uri>
     </include>
 
     <include>
-      <pose>1 -4.4 0 0 0 0</pose>
+      <pose>1 -4.2 0 0 0 0</pose>
       <name>human2_'rescue_randy_sitting'</name>
       <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/Rescue Randy Sitting/</uri>
     </include>
 
     <include>
-      <pose>4.4 2 0 0 0 3.14</pose>
+      <pose>4.2 2 0 0 0 3.14</pose>
       <name>human3_'rescue_randy_sitting'</name>
       <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/Rescue Randy Sitting/</uri>
     </include>
@@ -188,13 +188,13 @@
     </include>
 
     <include>
-      <pose>4.4 -2 0 0 0 -3.14</pose>
+      <pose>-4.2 0 0 0 0 0</pose>
       <name>human5_'rescue_randy_sitting'</name>
       <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/Rescue Randy Sitting/</uri>
     </include>
 
     <include>
-      <pose>4.4 -6 0 0 0 0</pose>
+      <pose>4.2 -6.8 0 0 0 3.14</pose>
       <name>human6_'rescue_randy_sitting'</name>
       <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/Rescue Randy Sitting/</uri>
     </include>
