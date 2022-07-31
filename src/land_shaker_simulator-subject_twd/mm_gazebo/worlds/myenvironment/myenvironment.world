@@ -200,8 +200,29 @@
     </include>
 
     <include>
+      <pose>-6.5 -5.5 0 0 0 0</pose>
+      <name>human7_'rescue_randy_sitting'</name>
+      <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/Rescue Randy Sitting/</uri>
+    </include>
+
+    <include>
+      <pose>-6.5 -4.5 0 0 0 3.14</pose>
+      <name>human8_'rescue_randy_sitting'</name>
+      <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/Rescue Randy Sitting/</uri>
+    </include>
+
+
+
+
+    <include>
       <pose>5 .5 .1 0 0 1.570796</pose>
-      <name>phone</name>
+      <name>phone1</name>
+      <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/Samsung J8 Black/</uri>
+    </include>
+
+    <include>
+      <pose>-6.5 -6.5 .1 0 0 1.570796</pose>
+      <name>phone2</name>
       <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/Samsung J8 Black/</uri>
     </include>
 
@@ -285,5 +306,46 @@
         <temperature>293.15</temperature>
       </plugin>
     </include>
+
+    <!-- <model name="box">
+      <pose>-6.5 -5.5 0.5 0 0 0</pose>
+      <link name="box_link">
+        <inertial>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1.0</mass>
+        </inertial>
+        <collision name="box_collision">
+          <geometry>
+            <box>
+              <size>1 1 1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="box_visual">
+          <geometry>
+            <box>
+              <size>1 1 1</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>1 0 0 1</diffuse>
+            <specular>1 0 0 1</specular>
+          </material>
+          <plugin
+            filename="ignition-gazebo-thermal-system"
+            name="ignition::gazebo::systems::Thermal">
+            <temperature>297.0</temperature>
+          </plugin>
+        </visual>
+      </link>
+    </model> -->
   </world>
 </sdf>
