@@ -2,6 +2,7 @@
 #include <image_transport/image_transport.h>
 #include <ros/ros.h>
 #include <sensor_msgs/Image.h>
+#include <sensor_msgs/Imu.h>
 
 #include <cstdint>
 #include <ignition/gazebo/System.hh>
@@ -15,6 +16,7 @@
 int cnt = 0;
 double last_fps_time;
 image_transport::Publisher pubThermalImage;
+ros::Publisher IMU_read_pub ;
 
 double linearResolution = 0.01;
 
@@ -71,13 +73,23 @@ void imuCb(const ignition::msgs::IMU &_msg) {
     std::mutex imuMsgMutex;
     // std::lock_guard<std::mutex> lock(this->imuMsgMutex);
     // const ::std::string name = _msg.entity_name();
-    ignition::msgs::Vector3d angular_v = _msg.angular_velocity();
-    // ROS_INFO("angular_velocity:%lf", angular_v.z());
     ignition::msgs::Quaternion Q_orientation = _msg.orientation();
-    // ROS_INFO("Q_orientation x:%lf", Q_orientation.x());
-    // ROS_INFO("Q_orientation y:%lf", Q_orientation.y());
-    // ROS_INFO("Q_orientation z:%lf", Q_orientation.z());
-    // ROS_INFO("Q_orientation w:%lf", Q_orientation.w());
+    ignition::msgs::Vector3d angular_v = _msg.angular_velocity();
+    ignition::msgs::Vector3d linear_acceleration = _msg.linear_acceleration();
+    sensor_msgs::Imu imu_data;
+    imu_data.header.stamp = ros::Time::now();
+    imu_data.header.frame_id = "base_link";
+    imu_data.orientation.x = Q_orientation.x();
+    imu_data.orientation.y = Q_orientation.y();
+    imu_data.orientation.z = Q_orientation.z();
+    imu_data.orientation.w = Q_orientation.w();
+    imu_data.angular_velocity.x = angular_v.x();
+    imu_data.angular_velocity.y = angular_v.y();
+    imu_data.angular_velocity.z = angular_v.z();
+    imu_data.linear_acceleration.x = linear_acceleration.x();
+    imu_data.linear_acceleration.y = linear_acceleration.y();
+    imu_data.linear_acceleration.z = linear_acceleration.z();
+    IMU_read_pub.publish(imu_data);
 }
 int main(int argc, char **argv) {
     ignition::transport::Node thermal_node;
@@ -95,6 +107,7 @@ int main(int argc, char **argv) {
     std::cout << " thermal_imu_vio_example start! " << std::endl;
     ros::init(argc, argv, "thermal_camera_example_pkg");
     ros::NodeHandle rnh;
+    IMU_read_pub = rnh.advertise<sensor_msgs::Imu>("imu/data", 1000);
     image_transport::ImageTransport it(rnh);
     pubThermalImage = it.advertise("/thermal_camera_example", 100);
 
