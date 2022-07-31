@@ -2,6 +2,9 @@
 <sdf version='1.4'>
   <model name='grasspatch'>
     <static>true</static>
+    <include>
+      <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Artifact Proximity Detector</uri>
+    </include>
     <link name='link'>
       <collision name='collision'>
         <pose>0 0 0 0 0 0</pose>
@@ -44,6 +47,10 @@
         <!-- <plugin filename="ignition-gazebo-thermal-system" name="ignition::gazebo::systems::Thermal">
           <temperature>296.15</temperature>
         </plugin> -->
+        <plugin filename="ignition-gazebo-thermal-system" name="ignition::gazebo::systems::Thermal">
+          <heat_signature>materials/textures/grass_dry.png</heat_signature>
+          <max_temp>297</max_temp>
+        </plugin>
 
       </visual>
     </link>

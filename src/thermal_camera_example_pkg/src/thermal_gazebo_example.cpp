@@ -24,6 +24,7 @@ void OnImage(const ignition::msgs::Image &_msg) {
     unsigned int thermalWidth = _msg.width();
     unsigned int thermalHeight = _msg.height();
     unsigned int thermalBufferSize = thermalSamples * sizeof(uint16_t);
+    float maxtemp = 0;
     auto *thermalBuffer = new uint16_t[thermalSamples];
     memcpy(thermalBuffer, _msg.data().c_str(), thermalBufferSize);
     for (auto r = 0; r < _msg.height(); ++r) {
@@ -34,11 +35,16 @@ void OnImage(const ignition::msgs::Image &_msg) {
             // convert the 16-bit value to Kelvin via the camera's linearResolution
             auto temp = thermalBuffer[rowOffset + c] * linearResolution;
             // do something useful with the temperature (in Kelvin) here
-            // 在这里对温度（开尔文）做一些有用的事情
+            if (maxtemp < temp) {
+                maxtemp = temp;
+            }
         }
     }
 
-    cv::Mat Imageresult(_msg.height(), _msg.width(), CV_16UC1, thermalBuffer);
+    ROS_INFO("width:%d,height:%d", thermalWidth, thermalHeight);
+    ROS_INFO("maxtemp:%f", maxtemp);
+    cv::Mat Imageresult(_msg.height(), _msg.width(), CV_16UC1, thermalBuffer, 320 * 2);
+    // cv::Mat Imageresult(_msg.width(), _msg.height(), CV_16UC1, thermalBuffer);
     // cv::Mat Imageresult(_msg.height(), _msg.width(), CV_8UC1, thermalBuffer);
 
     double fpstimestart = cv::getTickCount();
@@ -51,8 +57,8 @@ void OnImage(const ignition::msgs::Image &_msg) {
     cv::imshow("result_win", Imageresult);
     cv::waitKey(1);
 
-    // sensor_msgs::ImagePtr msg = cv_bridge::CvImage(std_msgs::Header(), "mono16", Imageresult).toImageMsg();
-    sensor_msgs::ImagePtr msg = cv_bridge::CvImage(std_msgs::Header(), "mono8", Imageresult).toImageMsg();
+    sensor_msgs::ImagePtr msg = cv_bridge::CvImage(std_msgs::Header(), "mono16", Imageresult).toImageMsg();
+    // sensor_msgs::ImagePtr msg = cv_bridge::CvImage(std_msgs::Header(), "mono8", Imageresult).toImageMsg();
     msg->header.stamp = ros::Time::now();
     pubThermalImage.publish(msg);
 
@@ -66,12 +72,12 @@ void imuCb(const ignition::msgs::IMU &_msg) {
     // std::lock_guard<std::mutex> lock(this->imuMsgMutex);
     // const ::std::string name = _msg.entity_name();
     ignition::msgs::Vector3d angular_v = _msg.angular_velocity();
-    ROS_INFO("angular_velocity:%lf", angular_v.z());
+    // ROS_INFO("angular_velocity:%lf", angular_v.z());
     ignition::msgs::Quaternion Q_orientation = _msg.orientation();
-    ROS_INFO("Q_orientation x:%lf", Q_orientation.x());
-    ROS_INFO("Q_orientation y:%lf", Q_orientation.y());
-    ROS_INFO("Q_orientation z:%lf", Q_orientation.z());
-    ROS_INFO("Q_orientation w:%lf", Q_orientation.w());
+    // ROS_INFO("Q_orientation x:%lf", Q_orientation.x());
+    // ROS_INFO("Q_orientation y:%lf", Q_orientation.y());
+    // ROS_INFO("Q_orientation z:%lf", Q_orientation.z());
+    // ROS_INFO("Q_orientation w:%lf", Q_orientation.w());
 }
 int main(int argc, char **argv) {
     ignition::transport::Node thermal_node;
@@ -90,7 +96,7 @@ int main(int argc, char **argv) {
     ros::init(argc, argv, "thermal_camera_example_pkg");
     ros::NodeHandle rnh;
     image_transport::ImageTransport it(rnh);
-    pubThermalImage = it.advertise("/thermal_camera_example", 1);
+    pubThermalImage = it.advertise("/thermal_camera_example", 100);
 
     ignition::transport::waitForShutdown();
     return 0;

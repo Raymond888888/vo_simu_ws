@@ -1,7 +1,10 @@
-<?xml version="1.0" ?>
+<?xml version="1.0"?>
 <sdf version="1.5">
   <model name="grey_wall">
     <static>true</static>
+    <include>
+      <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Artifact Proximity Detector</uri>
+    </include>
     <link name="link">
       <pose>0 0 1.4 0 0 0</pose>
       <collision name="collision">
@@ -33,6 +36,10 @@
             </metal>
           </pbr>
         </material>
+        <plugin filename="ignition-gazebo-thermal-system" name="ignition::gazebo::systems::Thermal">
+          <heat_signature>materials/textures/grey_wall.png</heat_signature>
+          <max_temp>292</max_temp>
+        </plugin>
       </visual>
     </link>
   </model>

@@ -4,7 +4,7 @@
     <static>true</static>
     <include>
       <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Artifact Proximity Detector</uri>
-   </include>
+    </include>
     <link name="link">
       <pose>0 0 -0.623996 0 0 0</pose>
       <collision name="collision">
