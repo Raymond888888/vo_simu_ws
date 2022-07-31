@@ -21,16 +21,13 @@
           <property type="bool" key="showTitleBar">false</property>
           <property type="string" key="state">docked</property>
         </ignition-gui>
-
         <engine>ogre2</engine>
         <scene>scene</scene>
         <ambient_light>0.4 0.4 0.4</ambient_light>
         <background_color>0.8 0.8 0.8</background_color>
-        <!-- <camera_pose>-6 0 6 0 0.5 0</camera_pose> -->
       </plugin>
 
       <!-- Plugins that add functionality to the scene -->
-
       <plugin filename="EntityContextMenuPlugin" name="Entity context menu">
         <ignition-gui>
           <property key="state" type="string">floating</property>
@@ -39,15 +36,6 @@
           <property key="showTitleBar" type="bool">false</property>
         </ignition-gui>
       </plugin>
-      <!-- <plugin filename="GzSceneManager" name="Scene Manager">
-          <ignition-gui>
-              <property key="resizable" type="bool">false</property>
-              <property key="width" type="double">5</property>
-              <property key="height" type="double">5</property>
-              <property key="state" type="string">floating</property>
-              <property key="showTitleBar" type="bool">false</property>
-          </ignition-gui>
-      </plugin> -->
       <plugin filename="InteractiveViewControl" name="Interactive view control">
         <ignition-gui>
           <property key="resizable" type="bool">false</property>
@@ -67,9 +55,6 @@
         </ignition-gui>
       </plugin>
 
-
-      <!-- ///////////////////////////////////////////////////////// -->
-
       <!-- World control -->
       <plugin filename="WorldControl" name="World control">
         <ignition-gui>
@@ -79,14 +64,12 @@
           <property type="double" key="height">72</property>
           <property type="double" key="width">121</property>
           <property type="double" key="z">1</property>
-
           <property type="string" key="state">floating</property>
           <anchors target="3D View">
             <line own="left" target="left" />
             <line own="bottom" target="bottom" />
           </anchors>
         </ignition-gui>
-
         <play_pause>true</play_pause>
         <step>true</step>
         <start_paused>true</start_paused>
@@ -103,20 +86,17 @@
           <property type="double" key="height">110</property>
           <property type="double" key="width">290</property>
           <property type="double" key="z">1</property>
-
           <property type="string" key="state">floating</property>
           <anchors target="3D View">
             <line own="right" target="right" />
             <line own="bottom" target="bottom" />
           </anchors>
         </ignition-gui>
-
         <sim_time>true</sim_time>
         <real_time>true</real_time>
         <real_time_factor>true</real_time_factor>
         <iterations>true</iterations>
         <topic>/world/Moving_robot/stats</topic>
-
       </plugin>
 
       <!-- Inspector -->
@@ -131,7 +111,6 @@
 
       <!-- Transform Control -->
       <plugin filename="TransformControl" name="Transform Control"></plugin>
-
       <plugin filename="ImageDisplay" name="Image Display">
         <ignition-gui>
           <title>Thermal camera</title>
@@ -173,7 +152,7 @@
     </atmosphere>
     
     <include>
-      <pose relative_to='world'>5.5 5.5 2 0 0 -1.5708</pose>
+      <pose>5.5 5.5 0 0 0 -1.5708</pose>
       <name>mobile_ls_robot1</name>
       <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/ls/</uri>
     </include>
