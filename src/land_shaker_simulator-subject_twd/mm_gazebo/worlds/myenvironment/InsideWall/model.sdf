@@ -1,4 +1,4 @@
-<?xml version="1.0" ?>
+<?xml version="1.0"?>
 <sdf version="1.5">
   <model name="grey_wall">
     <static>true</static>
@@ -33,6 +33,11 @@
             </metal>
           </pbr>
         </material>
+
+        <!-- <plugin filename="ignition-gazebo-thermal-system" name="ignition::gazebo::systems::Thermal">
+          <temperature>293.15</temperature>
+        </plugin> -->
+
       </visual>
     </link>
   </model>

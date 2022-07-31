@@ -161,7 +161,7 @@
     </light>
 
     <atmosphere type="adiabatic">
-      <temperature>297</temperature>
+      <temperature>297.15</temperature>
       <!--
         This is a more exaggerated temperature gradient, which produces a
         temperature range of ~11.5 kelvin for objects in the thermal camera
@@ -980,7 +980,7 @@
       </link>
 
       <link name="thermal_camera">
-        <pose relative_to="base_footprint">0.5 0 0.45 0 0 0</pose> <!--angles are in radian-->
+        <pose relative_to="base_footprint">0.3 0 0.65 0 0 0</pose> <!--angles are in radian-->
         <collision name="collision">
           <geometry>
             <box>
@@ -1019,6 +1019,31 @@
             <resolution>0.01</resolution>
           </plugin>
         </sensor>
+        <!-- <sensor name="thermal_camera_8bit" type="thermal">
+          <camera>
+            <horizontal_fov>1.047</horizontal_fov>
+            <image>
+              <width>320</width>
+              <height>240</height>
+              <format>L8</format>
+            </image>
+            <clip>
+              <near>0.1</near>
+              <far>100</far>
+            </clip>
+          </camera>
+          <always_on>1</always_on>
+          <update_rate>30</update_rate>
+          <visualize>true</visualize>
+          <topic>thermal_camera</topic>
+          <plugin
+            filename="ignition-gazebo-thermal-sensor-system"
+            name="ignition::gazebo::systems::ThermalSensor">
+            <min_temp>273.15</min_temp>
+            <max_temp>313.15</max_temp>
+            <resolution>2</resolution>
+          </plugin>
+        </sensor> -->
       </link>
       <joint name='thermal_camera_joint' type='revolute'>
         <parent>base_footprint</parent>
@@ -1032,7 +1057,7 @@
         </axis>
       </joint>
       <link name="imu_link">
-        <pose relative_to="base_footprint">0.5 0 0.55 0 0 0</pose> <!--angles are in radian-->
+        <pose relative_to="base_footprint">0.3 0 0.75 0 0 0</pose> <!--angles are in radian-->
         <collision name="collision">
           <geometry>
             <box>
@@ -1076,6 +1101,104 @@
           </limit>
         </axis>
       </joint>
+
+      <!-- <link name="test_box_lowtemp">
+        <pose relative_to="thermal_camera">0.095 0.06 0 0 0 0</pose>
+        <inertial>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>0</mass>
+        </inertial>
+        <collision name="box_collision">
+          <geometry>
+            <box>
+              <size>0.01 0.01 0.15</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="box_visual">
+          <geometry>
+            <box>
+              <size>0.01 0.01 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>1 0 0 1</diffuse>
+            <specular>1 0 0 1</specular>
+          </material>
+          <plugin filename="ignition-gazebo-thermal-system" name="ignition::gazebo::systems::Thermal">
+            <temperature>296.15</temperature>
+          </plugin>
+        </visual>
+
+      </link>
+      <joint name='test_box_lowtemp_joint' type='revolute'>
+        <parent>base_footprint</parent>
+        <child>test_box_lowtemp</child>
+        <axis>
+          <xyz expressed_in='__model__'>0 1 0</xyz>
+          <limit>
+            <lower>-1.79769e+308</lower> 
+            <upper>1.79769e+308</upper> 
+          </limit>
+        </axis>
+      </joint>
+
+      <link name="test_box_hightemp">
+        <pose relative_to="thermal_camera">0.095 -0.06 0 0 0 0</pose>
+        <inertial>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>0</mass>
+        </inertial>
+        <collision name="box_collision">
+          <geometry>
+            <box>
+              <size>0.01 0.01 0.15</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="box_visual">
+          <geometry>
+            <box>
+              <size>0.01 0.01 0.1</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>1 0 0 1</diffuse>
+            <specular>1 0 0 1</specular>
+          </material>
+          <plugin filename="ignition-gazebo-thermal-system" name="ignition::gazebo::systems::Thermal">
+            <temperature>308.15</temperature>
+          </plugin>
+        </visual>
+
+      </link>
+      <joint name='test_box_hightemp_joint' type='revolute'>
+        <parent>base_footprint</parent>
+        <child>test_box_hightemp</child>
+        <axis>
+          <xyz expressed_in='__model__'>0 1 0</xyz>
+          <limit>
+            <lower>-1.79769e+308</lower> 
+            <upper>1.79769e+308</upper> 
+          </limit>
+        </axis>
+      </joint> -->
 
       <plugin filename="ImageDisplay" name="Image Display">
         <ignition-gui>
@@ -1316,11 +1439,11 @@
       </plugin>
     </model>
 
-    <!-- <include>
-      <pose>2 5 0 0 0 0</pose>
+    <include>
+      <pose>5 2 0 0 0 0</pose>
       <name>human_'rescue_randy'</name>
-      <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Rescue Randy</uri>
-    </include> -->
+      <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/Rescue Randy/</uri>
+    </include>
 
     <include>
       <pose>1 4.4 0 0 0 3.14</pose>
@@ -1335,7 +1458,31 @@
     </include>
 
     <include>
-      <pose>2.25 .5 .1 0 0 1.570796</pose>
+      <pose>4.4 2 0 0 0 3.14</pose>
+      <name>human3_'rescue_randy_sitting'</name>
+      <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/Rescue Randy Sitting/</uri>
+    </include>
+
+    <include>
+      <pose>4.4 0 0 0 0 0</pose>
+      <name>human4_'rescue_randy_sitting'</name>
+      <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/Rescue Randy Sitting/</uri>
+    </include>
+
+    <include>
+      <pose>4.4 -2 0 0 0 -3.14</pose>
+      <name>human5_'rescue_randy_sitting'</name>
+      <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/Rescue Randy Sitting/</uri>
+    </include>
+
+    <include>
+      <pose>4.4 -6 0 0 0 0</pose>
+      <name>human6_'rescue_randy_sitting'</name>
+      <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/Rescue Randy Sitting/</uri>
+    </include>
+
+    <include>
+      <pose>5 .5 .1 0 0 1.570796</pose>
       <name>phone</name>
       <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/Samsung J8 Black/</uri>
     </include>
@@ -1420,52 +1567,5 @@
         <temperature>293.15</temperature>
       </plugin>
     </include>
-
-    <!-- <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/NIST maze wall 240</uri> -->
-    <!-- <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Cutout Wall</uri> -->
-    <!-- Cutout Wall -->
-    <!-- Grey Wall -->
-    <!-- NIST maze wall 240 -->
-    <!-- NIST maze wall triple holes 120 -->
-
-    <model name="box">
-      <!-- <pose>5.5 0 0.5 0 0 0</pose> -->
-      <pose>0 0 0.5 0 0 0</pose>
-      <link name="box_link">
-        <inertial>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-          <mass>1.0</mass>
-        </inertial>
-        <collision name="box_collision">
-          <geometry>
-            <box>
-              <size>1 1 1</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="box_visual">
-          <geometry>
-            <box>
-              <size>1 1 1</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>1 0 0 1</ambient>
-            <diffuse>1 0 0 1</diffuse>
-            <specular>1 0 0 1</specular>
-          </material>
-          <plugin filename="ignition-gazebo-thermal-system" name="ignition::gazebo::systems::Thermal">
-            <temperature>285.0</temperature>
-          </plugin>
-        </visual>
-      </link>
-    </model>
   </world>
 </sdf>

@@ -41,9 +41,9 @@
           </pbr>
         </material>
 
-        <plugin filename="ignition-gazebo-thermal-system" name="ignition::gazebo::systems::Thermal">
+        <!-- <plugin filename="ignition-gazebo-thermal-system" name="ignition::gazebo::systems::Thermal">
           <temperature>296.15</temperature>
-        </plugin>
+        </plugin> -->
 
       </visual>
     </link>
