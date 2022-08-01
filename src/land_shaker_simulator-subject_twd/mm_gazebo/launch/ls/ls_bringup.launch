@@ -7,7 +7,7 @@
     <arg name="world_name" default="$(find mm_gazebo)/worlds/tracked_vehicle_simple.world" />
     <arg name="model_pose" default="-x 0 -y 4 -z 0.15 -R 0 -P 0 -Y 0" />
     <arg name="world_enable" default="true" />
-    <arg name="ground_truth" default="true"/>
+    <arg name="ground_truth" default="true" />
 
     <!-- launch gazebo world -->
     <group if="$(arg world_enable)">
@@ -15,7 +15,7 @@
             <arg name="world_name" default="$(arg world_name)" />
             <arg name="gui" value="$(arg gui)" />
             <arg name="paused" value="$(arg paused)" />
-            <arg name="verbose" default="$(arg verbose)"/>
+            <arg name="verbose" default="$(arg verbose)" />
         </include>
     </group>
 
@@ -37,7 +37,7 @@
         <param name="/use_gui" value="false" />
         <rosparam param="/source_list">[/joint_states]</rosparam>
     </node> -->
-<!-- 
+    <!-- 
     <node name="cmd_relay" pkg="topic_tools" type="relay" args="/cmd_vel /track_velocity_controller/cmd_vel" output="screen" />
 
     <node pkg="teleop_twist_keyboard" type="twist_to_std_msg.py" name="twist_to_std_msg_node" />
@@ -48,7 +48,6 @@
             <param name="topic_name" value="/cmd_vel" />
         </node>
     </group>
-
     # odom ground truth to tf and path
     # 在urdf中, base_footprint与vehicle_base_link重合
     <group if="$(arg ground_truth)">
@@ -58,7 +57,7 @@
             <param name="child_frame" value="base_footprint" />
             <param name="path_enable" value="true" />
             <param name="path_topic" value="/ls_path_gt" />
-            <param name="path_dist_topic" value="/traveling_dist"/>
+            <param name="path_dist_topic" value="/traveling_dist" />
             <param name="path_points_topic" value="/ls_path_points_gt" />
             <param name="path_dist_threshold" value="0.1" />
             <param name="path_angle_threshold" value="2" />
@@ -74,7 +73,7 @@
             <param name="lidar_frame" value="/velodyne" />
             <param name="path_enable" value="true" />
             <param name="path_topic" value="/ls_path_gt" />
-            <param name="path_dist_topic" value="/traveling_dist"/>
+            <param name="path_dist_topic" value="/traveling_dist" />
             <param name="path_points_topic" value="/ls_path_points_gt" />
             <param name="path_dist_threshold" value="0.1" />
             <param name="path_angle_threshold" value="2" />
@@ -87,5 +86,8 @@
     </group>
     # 对点云进行self filter滤波
     <!-- <include file="$(find filter_pkg)/launch/filter.launch" /> -->
+
+    <!-- models -->
+    <include file="$(find thermal_camera_example_pkg)/launch/thermal_camera_example_pkg.launch"></include>
 
 </launch>
