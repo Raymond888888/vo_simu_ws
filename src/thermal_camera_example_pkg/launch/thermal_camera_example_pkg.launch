@@ -1,0 +1,5 @@
+<launch>
+
+    <node pkg="thermal_camera_example_pkg" type="thermal_camera_example" name="thermal_camera_example" />
+
+</launch>

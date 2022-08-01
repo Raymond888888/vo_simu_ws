@@ -107,7 +107,7 @@ int main(int argc, char **argv) {
     std::cout << " thermal_imu_vio_example start! " << std::endl;
     ros::init(argc, argv, "thermal_camera_example_pkg");
     ros::NodeHandle rnh;
-    IMU_read_pub = rnh.advertise<sensor_msgs::Imu>("imu/data", 1000);
+    IMU_read_pub = rnh.advertise<sensor_msgs::Imu>("imu/data", 100);
     image_transport::ImageTransport it(rnh);
     pubThermalImage = it.advertise("/thermal_camera_example", 100);
 
