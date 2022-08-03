@@ -88,6 +88,6 @@
     <!-- <include file="$(find filter_pkg)/launch/filter.launch" /> -->
 
     <!-- models -->
-    <!-- <include file="$(find thermal_camera_example_pkg)/launch/thermal_camera_example_pkg.launch"></include> -->
+    <include file="$(find thermal_camera_example_pkg)/launch/thermal_camera_example_pkg.launch"></include>
 
 </launch>
