@@ -143,13 +143,13 @@ void imuCb(const ignition::msgs::IMU &_msg) {
 int main(int argc, char **argv) {
     ros::init(argc, argv, "thermal_camera_example_pkg");
     ros::NodeHandle rnh;
-    // ignition::transport::Node thermal_node;
+    ignition::transport::Node thermal_node;
     ignition::transport::Node camera_node;
     ignition::transport::Node imu_node;
-    // if (!thermal_node.Subscribe("/thermal_camera", &OnImage)) {
-    //     ROS_ERROR("Error subscribing to the thermal camera topic");
-    //     return -1;
-    // }
+    if (!thermal_node.Subscribe("/thermal_camera", &OnImage)) {
+        ROS_ERROR("Error subscribing to the thermal camera topic");
+        return -1;
+    }
     if (!camera_node.Subscribe("/camera", &OnImage_camera)) {
         ROS_ERROR("Error subscribing to the camera topic");
         return -1;
@@ -161,7 +161,7 @@ int main(int argc, char **argv) {
     ROS_INFO(" thermal_imu_vio_example start! ");
     IMU_read_pub = rnh.advertise<sensor_msgs::Imu>("/imu0", 100);
     image_transport::ImageTransport it(rnh);
-    // pubThermalImage = it.advertise("/cam0/image_raw", 100);
+    pubThermalImage = it.advertise("/cam1/image_raw", 100);
     pubCameraImage = it.advertise("/cam0/image_raw", 100);
 
     ignition::transport::waitForShutdown();
