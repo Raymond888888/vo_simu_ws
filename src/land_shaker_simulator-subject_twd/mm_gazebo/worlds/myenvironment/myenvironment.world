@@ -121,6 +121,17 @@
         <topic>thermal_camera</topic>
         <topic_picker>false</topic_picker>
       </plugin>
+      <plugin filename="ImageDisplay" name="Image Display2">
+        <ignition-gui>
+          <title>Camera</title>
+          <property key="state" type="string">floating</property>
+          <property type="double" key="width">350</property>
+          <property type="double" key="height">315</property>
+          <property type="double" key="x">500</property>
+        </ignition-gui>
+        <topic>camera</topic>
+        <topic_picker>false</topic_picker>
+      </plugin>
       <!-- KeyPublisher plugin-->
       <plugin filename="KeyPublisher" name="Key Publisher" />
     </gui>

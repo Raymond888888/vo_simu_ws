@@ -5,6 +5,7 @@
 #include <sensor_msgs/Imu.h>
 
 #include <cstdint>
+#include <cstring>
 #include <ignition/gazebo/System.hh>
 #include <ignition/msgs.hh>
 #include <ignition/transport.hh>
@@ -16,9 +17,30 @@
 int cnt = 0;
 double last_fps_time;
 image_transport::Publisher pubThermalImage;
-ros::Publisher IMU_read_pub ;
+image_transport::Publisher pubCameraImage;
+ros::Publisher IMU_read_pub;
 
 double linearResolution = 0.01;
+
+cv::Mat getImageFromMsg_8UC12mono8(const sensor_msgs::ImageConstPtr &img_msg) {
+    cv_bridge::CvImageConstPtr ptr;
+    if (img_msg->encoding == "8UC1") {
+        sensor_msgs::Image img;
+        img.header = img_msg->header;
+        img.height = img_msg->height;
+        img.width = img_msg->width;
+        img.is_bigendian = img_msg->is_bigendian;
+        img.step = img_msg->step;
+        img.data = img_msg->data;
+        img.encoding = "mono8";
+        ptr = cv_bridge::toCvCopy(img, sensor_msgs::image_encodings::MONO8);
+    } else
+        ptr = cv_bridge::toCvCopy(img_msg, sensor_msgs::image_encodings::MONO8);
+
+    cv::Mat img = ptr->image.clone();
+
+    return img;
+}
 
 void OnImage(const ignition::msgs::Image &_msg) {
     // convert the serialized image data to 16-bit temperature values
@@ -66,6 +88,33 @@ void OnImage(const ignition::msgs::Image &_msg) {
 
     delete[] thermalBuffer;
 }
+void OnImage_camera(const ignition::msgs::Image &_msg) {
+    // convert the serialized image data to 16-bit temperature values
+    unsigned int cameraSamples = _msg.width() * _msg.height();
+    unsigned int cameraWidth = _msg.width();
+    unsigned int cameraHeight = _msg.height();
+    unsigned int cameraBufferSize = 3 * cameraSamples * sizeof(uint8_t);
+    auto *cameraBuffer = new uint8_t[cameraSamples * 3];
+    memcpy(cameraBuffer, _msg.data().c_str(), cameraBufferSize);
+    // ROS_INFO("width:%d,height:%d", cameraWidth, cameraHeight);
+    // cv::Mat Imageresult(_msg.height(), _msg.width(), CV_8UC3, cameraBuffer, _msg.width() * sizeof(uint8_t) * 3);
+    cv::Mat Imageresult(_msg.height(), _msg.width(), CV_8UC3, cameraBuffer);
+    // cv::cvtColor(Imageresult,Imageresult,cv::COLOR_RGB2BGR,0);
+    cv::cvtColor(Imageresult, Imageresult, cv::COLOR_RGB2GRAY, 0);
+    double fpstimestart = cv::getTickCount();
+    ROS_INFO("fps:%lf", (cv::getTickFrequency() / (double)(fpstimestart - last_fps_time)));
+    last_fps_time = fpstimestart;
+    cnt++;
+    cv::imshow("result_win2", Imageresult);
+    cv::waitKey(1);
+    // cv::Mat pubImage = getImageFromMsg_8UC12mono8(&Imageresult);
+    ROS_INFO("width:%d,height:%d", Imageresult.cols, Imageresult.rows);
+    sensor_msgs::ImagePtr msg = cv_bridge::CvImage(std_msgs::Header(), "mono8", Imageresult).toImageMsg();
+    msg->header.stamp = ros::Time::now();
+    pubCameraImage.publish(msg);
+    delete[] cameraBuffer;
+}
+
 void imuCb(const ignition::msgs::IMU &_msg) {
     std::string imuName;
     bool imuInitialized;
@@ -92,24 +141,28 @@ void imuCb(const ignition::msgs::IMU &_msg) {
     IMU_read_pub.publish(imu_data);
 }
 int main(int argc, char **argv) {
-    ignition::transport::Node thermal_node;
+    ros::init(argc, argv, "thermal_camera_example_pkg");
+    ros::NodeHandle rnh;
+    // ignition::transport::Node thermal_node;
+    ignition::transport::Node camera_node;
     ignition::transport::Node imu_node;
-    if (!thermal_node.Subscribe("/thermal_camera", &OnImage)) {
-        ROS_ERROR("Error subscribing to the thermal camera topic");
-        std::cerr << "Error subscribing to the thermal camera topic" << std::endl;
+    // if (!thermal_node.Subscribe("/thermal_camera", &OnImage)) {
+    //     ROS_ERROR("Error subscribing to the thermal camera topic");
+    //     return -1;
+    // }
+    if (!camera_node.Subscribe("/camera", &OnImage_camera)) {
+        ROS_ERROR("Error subscribing to the camera topic");
         return -1;
     }
     if (!imu_node.Subscribe("/imu_topic", &imuCb)) {
         ROS_ERROR("Error subscribing to the IMU topic");
-        std::cerr << "Error subscribing to the IMU topic" << std::endl;
         return -1;
     }
-    std::cout << " thermal_imu_vio_example start! " << std::endl;
-    ros::init(argc, argv, "thermal_camera_example_pkg");
-    ros::NodeHandle rnh;
-    IMU_read_pub = rnh.advertise<sensor_msgs::Imu>("imu/data", 100);
+    ROS_INFO(" thermal_imu_vio_example start! ");
+    IMU_read_pub = rnh.advertise<sensor_msgs::Imu>("/imu0", 100);
     image_transport::ImageTransport it(rnh);
-    pubThermalImage = it.advertise("/thermal_camera_example", 100);
+    // pubThermalImage = it.advertise("/cam0/image_raw", 100);
+    pubCameraImage = it.advertise("/cam0/image_raw", 100);
 
     ignition::transport::waitForShutdown();
     return 0;

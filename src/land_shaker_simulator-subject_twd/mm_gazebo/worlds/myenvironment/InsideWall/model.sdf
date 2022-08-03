@@ -38,6 +38,7 @@
         </material>
         <plugin filename="ignition-gazebo-thermal-system" name="ignition::gazebo::systems::Thermal">
           <heat_signature>materials/textures/grey_wall.png</heat_signature>
+          <!-- <min_temp>280</min_temp> -->
           <max_temp>292</max_temp>
         </plugin>
       </visual>

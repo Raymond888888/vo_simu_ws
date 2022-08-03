@@ -1,6 +1,6 @@
 <launch>
 
     <node pkg="thermal_camera_example_pkg" type="thermal_camera_example" name="thermal_camera_example" />
-    <node pkg="thermal_camera_example_pkg" type="orb_cv" name="orb_cv" />
+    <!-- <node pkg="thermal_camera_example_pkg" type="orb_cv" name="orb_cv" /> -->
 
 </launch>
