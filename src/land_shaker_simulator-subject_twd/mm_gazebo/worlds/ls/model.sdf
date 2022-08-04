@@ -893,7 +893,7 @@
             <format>L16</format>
           </image>
           <clip>
-            <near>0.1</near>
+            <near>0.2</near>
             <far>50</far>
           </clip>
         </camera>

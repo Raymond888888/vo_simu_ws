@@ -162,7 +162,7 @@
     </atmosphere>
     
     <include>
-      <pose>5.5 5.5 0 0 0 -1.5708</pose>
+      <pose>5.5 5.5 0 0 0 0</pose>
       <name>mobile_ls_robot1</name>
       <uri>///home/raymond/vo_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/ls/</uri>
     </include>
@@ -317,10 +317,10 @@
       </plugin>
     </include>
 
-    <!-- <include>
-      <pose>5.5 4.5 0 0 0 -1.5708</pose>
+    <include>
+      <pose>6.5 5.5 0.5 1.5708 0 -1.5708</pose>
       <name>charuco_default</name>
       <uri>///home/raymond/vo_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/charuco_default/</uri>
-    </include> -->
+    </include>
   </world>
 </sdf>
