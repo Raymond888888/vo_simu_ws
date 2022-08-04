@@ -36,7 +36,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/ur5e/collision/base.stl</uri>
+            <uri>///home/raymond/vo_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/ur5e/collision/base.stl</uri>
           </mesh>
         </geometry>
       </collision>
@@ -83,7 +83,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/vehicle/board_link.STL</uri>
+            <uri>///home/raymond/vo_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/vehicle/board_link.STL</uri>
           </mesh>
         </geometry>
       </collision>
@@ -413,7 +413,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/vehicle/support_link.STL</uri>
+            <uri>///home/raymond/vo_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/vehicle/support_link.STL</uri>
           </mesh>
         </geometry>
       </collision>
@@ -422,7 +422,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/vehicle/lidar_support.STL</uri>
+            <uri>///home/raymond/vo_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/vehicle/lidar_support.STL</uri>
           </mesh>
         </geometry>
       </collision>
@@ -458,7 +458,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/vehicle/base_meter.STL</uri>
+            <uri>///home/raymond/vo_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/vehicle/base_meter.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -473,7 +473,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/ur5e/visual/base.dae</uri>
+            <uri>///home/raymond/vo_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/ur5e/visual/base.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -482,7 +482,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/vehicle/board_link.STL</uri>
+            <uri>///home/raymond/vo_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/vehicle/board_link.STL</uri>
           </mesh>
         </geometry>
       </visual>
@@ -505,7 +505,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/vehicle/track_entity_meter.STL</uri>
+            <uri>///home/raymond/vo_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/vehicle/track_entity_meter.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -667,7 +667,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/vehicle/track_entity_meter.STL</uri>
+            <uri>///home/raymond/vo_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/vehicle/track_entity_meter.STL</uri>
           </mesh>
         </geometry>
         <material>
@@ -742,7 +742,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/vehicle/support_link.STL</uri>
+            <uri>///home/raymond/vo_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/vehicle/support_link.STL</uri>
           </mesh>
         </geometry>
       </visual>
@@ -751,7 +751,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/vehicle/lidar_support.STL</uri>
+            <uri>///home/raymond/vo_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/vehicle/lidar_support.STL</uri>
           </mesh>
         </geometry>
       </visual>
@@ -865,7 +865,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/ur5e/collision/shoulder.stl</uri>
+            <uri>///home/raymond/vo_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/ur5e/collision/shoulder.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -882,7 +882,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/ur5e/visual/shoulder.dae</uri>
+            <uri>///home/raymond/vo_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/ur5e/visual/shoulder.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -927,7 +927,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/ur5e/collision/upperarm.stl</uri>
+            <uri>///home/raymond/vo_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/ur5e/collision/upperarm.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -944,7 +944,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/ur5e/visual/upperarm.dae</uri>
+            <uri>///home/raymond/vo_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/ur5e/visual/upperarm.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -989,7 +989,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/ur5e/collision/forearm.stl</uri>
+            <uri>///home/raymond/vo_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/ur5e/collision/forearm.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1006,7 +1006,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/ur5e/visual/forearm.dae</uri>
+            <uri>///home/raymond/vo_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/ur5e/visual/forearm.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1051,7 +1051,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/ur5e/collision/wrist1.stl</uri>
+            <uri>///home/raymond/vo_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/ur5e/collision/wrist1.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1068,7 +1068,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/ur5e/visual/wrist1.dae</uri>
+            <uri>///home/raymond/vo_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/ur5e/visual/wrist1.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1113,7 +1113,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/ur5e/collision/wrist2.stl</uri>
+            <uri>///home/raymond/vo_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/ur5e/collision/wrist2.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1130,7 +1130,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/ur5e/visual/wrist2.dae</uri>
+            <uri>///home/raymond/vo_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/ur5e/visual/wrist2.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1175,7 +1175,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/ur5e/collision/wrist3.stl</uri>
+            <uri>///home/raymond/vo_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/ur5e/collision/wrist3.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -1206,7 +1206,7 @@
       <collision name='wrist_3_link_fixed_joint_lump__camera_flange_link_collision_2'>
         <pose>0.045 0.1 0.022 1.5708 -0 -3.14159</pose>
         <geometry>
-          <mesh filename="///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_description/meshes/d435/camera_flange_link.STL" scale="0.001 0.001 0.001" />
+          <mesh filename="///home/raymond/vo_simu_ws/src/land_shaker_simulator-subject_twd/mm_description/meshes/d435/camera_flange_link.STL" scale="0.001 0.001 0.001" />
         </geometry>
         <surface>
           <contact>
@@ -1220,7 +1220,7 @@
       <collision name='wrist_3_link_fixed_joint_lump__camera_link_collision_3'>
         <pose>-0.00025 0.19055 0.0675 1.5708 -0 -3.14159</pose>
         <geometry>
-          <mesh filename="///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_description/meshes/d435/d435.dae" scale="1 1 1" />
+          <mesh filename="///home/raymond/vo_simu_ws/src/land_shaker_simulator-subject_twd/mm_description/meshes/d435/d435.dae" scale="1 1 1" />
         </geometry>
         <surface>
           <contact>
@@ -1236,14 +1236,14 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/ur5e/visual/wrist3.dae</uri>
+            <uri>///home/raymond/vo_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/mobile_manipulator/meshes/ur5e/visual/wrist3.dae</uri>
           </mesh>
         </geometry>
       </visual>
       <visual name='wrist_3_link_fixed_joint_lump__camera_flange_link_visual_1'>
         <pose>0.045 0.1 0.022 1.5708 -0 -3.14159</pose>
         <geometry>
-          <mesh filename="///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_description/meshes/d435/camera_flange_link.STL" scale="0.001 0.001 0.001" />
+          <mesh filename="///home/raymond/vo_simu_ws/src/land_shaker_simulator-subject_twd/mm_description/meshes/d435/camera_flange_link.STL" scale="0.001 0.001 0.001" />
         </geometry>
       </visual>
       <visual name='wrist_3_link_fixed_joint_lump__camera_link_visual_2'>
@@ -1251,9 +1251,9 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_description/meshes/d435/d435.dae</uri>
+            <uri>///home/raymond/vo_simu_ws/src/land_shaker_simulator-subject_twd/mm_description/meshes/d435/d435.dae</uri>
           </mesh>
-          <mesh filename="///home/raymond/vio_thermal_simu_ws/src/land_shaker_simulator-subject_twd/mm_description/meshes/d435/d435.dae" scale="1 1 1" />
+          <mesh filename="///home/raymond/vo_simu_ws/src/land_shaker_simulator-subject_twd/mm_description/meshes/d435/d435.dae" scale="1 1 1" />
         </geometry>
       </visual>
       <enable_wind>0</enable_wind>

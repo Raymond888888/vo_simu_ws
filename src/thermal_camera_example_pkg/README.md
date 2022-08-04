@@ -54,7 +54,7 @@ car_robot : https://www.ncnynl.com/archives/202201/4926.html
 运行成功，实现了： @todo
 
 2022.5.24
-将功能包迁移到vio_thermal_simu_ws包里，运行状态为：
+将功能包迁移到vo_simu_ws包里，运行状态为：
 
 (noetic)roscore
 (noetic)ign gazebo -r src/thermal_camera_example_pkg/examples/worlds/car_robot.sdf
