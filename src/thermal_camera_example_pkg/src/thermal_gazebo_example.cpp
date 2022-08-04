@@ -49,6 +49,7 @@ void OnImage(const ignition::msgs::Image &_msg) {
     unsigned int thermalHeight = _msg.height();
     unsigned int thermalBufferSize = thermalSamples * sizeof(uint16_t);
     float maxtemp = 0;
+    float mintemp = 1000;
     auto *thermalBuffer = new uint16_t[thermalSamples];
     memcpy(thermalBuffer, _msg.data().c_str(), thermalBufferSize);
     for (auto r = 0; r < _msg.height(); ++r) {
@@ -62,15 +63,20 @@ void OnImage(const ignition::msgs::Image &_msg) {
             if (maxtemp < temp) {
                 maxtemp = temp;
             }
+            if (mintemp > temp) {
+                mintemp = temp;
+            }
         }
     }
-    ROS_INFO("width:%d,height:%d", thermalWidth, thermalHeight);
+    // ROS_INFO("width:%d,height:%d", thermalWidth, thermalHeight);
     ROS_INFO("maxtemp:%f", maxtemp);
+    ROS_INFO("mintemp:%f", mintemp);
     cv::Mat Imageresult(_msg.height(), _msg.width(), CV_16UC1, thermalBuffer, 320 * 2);
     double fpstimestart = cv::getTickCount();
     ROS_INFO("fps:%lf", (cv::getTickFrequency() / (double)(fpstimestart - last_fps_time)));
     last_fps_time = fpstimestart;
     cnt++;
+    cv::normalize(Imageresult, Imageresult, 0, 65536, cv::NORM_MINMAX, CV_16UC1);
     cv::imshow("result_win", Imageresult);
     cv::waitKey(1);
 

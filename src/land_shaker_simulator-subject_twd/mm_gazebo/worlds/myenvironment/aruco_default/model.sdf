@@ -21,8 +21,8 @@
         </material>
         <plugin filename="ignition-gazebo-thermal-system" name="ignition::gazebo::systems::Thermal">
           <heat_signature>materials/textures/pattern.png</heat_signature>
-          <min_temp>270</min_temp>
-          <max_temp>317</max_temp>
+          <min_temp>273.15</min_temp>
+          <max_temp>312.15</max_temp>
         </plugin>
       </visual>
     </link>
