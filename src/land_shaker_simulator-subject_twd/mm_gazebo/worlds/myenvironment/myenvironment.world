@@ -253,74 +253,54 @@
       <pose>0 -3.8 0 0 0 0</pose>
       <name>wall1</name>
       <uri>///home/raymond/vo_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/InsideWall/</uri>
-      <plugin filename="ignition-gazebo-thermal-system" name="ignition::gazebo::systems::Thermal">
-        <temperature>293.15</temperature>
-      </plugin>
     </include>
     <include>
       <pose>0 3.8 0 0 0 0</pose>
       <name>wall2</name>
       <uri>///home/raymond/vo_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/InsideWall/</uri>
-      <plugin filename="ignition-gazebo-thermal-system" name="ignition::gazebo::systems::Thermal">
-        <temperature>293.15</temperature>
-      </plugin>
     </include>
     <include>
       <pose>3.8 0 0 0 0 1.5708</pose>
       <name>wall3</name>
       <uri>///home/raymond/vo_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/InsideWall/</uri>
-      <plugin filename="ignition-gazebo-thermal-system" name="ignition::gazebo::systems::Thermal">
-        <temperature>293.15</temperature>
-      </plugin>
     </include>
     <include>
       <pose>-3.8 0 0 0 0 1.5708</pose>
       <name>wall4</name>
       <uri>///home/raymond/vo_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/InsideWall/</uri>
-      <plugin filename="ignition-gazebo-thermal-system" name="ignition::gazebo::systems::Thermal">
-        <temperature>293.15</temperature>
-      </plugin>
     </include>
-
 
     <!--外墙 -->
     <include>
       <pose>0 -7.1 0 0 0 0</pose>
       <name>wall5</name>
       <uri>///home/raymond/vo_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/OutsideWall/</uri>
-      <plugin filename="ignition-gazebo-thermal-system" name="ignition::gazebo::systems::Thermal">
-        <temperature>293.15</temperature>
-      </plugin>
     </include>
     <include>
       <pose>0 7.1 0 0 0 0</pose>
       <name>wall6</name>
       <uri>///home/raymond/vo_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/OutsideWall/</uri>
-      <plugin filename="ignition-gazebo-thermal-system" name="ignition::gazebo::systems::Thermal">
-        <temperature>293.15</temperature>
-      </plugin>
     </include>
     <include>
       <pose>7.1 0 0 0 0 1.5708</pose>
       <name>wall7</name>
       <uri>///home/raymond/vo_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/OutsideWall/</uri>
-      <plugin filename="ignition-gazebo-thermal-system" name="ignition::gazebo::systems::Thermal">
-        <temperature>293.15</temperature>
-      </plugin>
     </include>
     <include>
       <pose>-7.1 0 0 0 0 1.5708</pose>
       <name>wall8</name>
       <uri>///home/raymond/vo_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/OutsideWall/</uri>
-      <plugin filename="ignition-gazebo-thermal-system" name="ignition::gazebo::systems::Thermal">
-        <temperature>293.15</temperature>
-      </plugin>
     </include>
 
-    <include>
-      <pose>6.5 5.5 0.5 1.5708 0 -1.5708</pose>
+    <!-- <include>
+      <pose>6.5 5.5 0.4 1.5708 1.5708 -1.5708</pose>
       <name>charuco_default</name>
       <uri>///home/raymond/vo_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/charuco_default/</uri>
+    </include> -->
+    <include>
+      <pose>6.5 5.5 0.4 1.5708 1.5708 -1.5708</pose>
+      <name>aruco_default</name>
+      <uri>///home/raymond/vo_simu_ws/src/land_shaker_simulator-subject_twd/mm_gazebo/worlds/myenvironment/aruco_default/</uri>
     </include>
   </world>
 </sdf>

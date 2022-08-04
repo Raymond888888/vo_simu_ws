@@ -64,28 +64,19 @@ void OnImage(const ignition::msgs::Image &_msg) {
             }
         }
     }
-
     ROS_INFO("width:%d,height:%d", thermalWidth, thermalHeight);
     ROS_INFO("maxtemp:%f", maxtemp);
     cv::Mat Imageresult(_msg.height(), _msg.width(), CV_16UC1, thermalBuffer, 320 * 2);
-    // cv::Mat Imageresult(_msg.width(), _msg.height(), CV_16UC1, thermalBuffer);
-    // cv::Mat Imageresult(_msg.height(), _msg.width(), CV_8UC1, thermalBuffer);
-
     double fpstimestart = cv::getTickCount();
     ROS_INFO("fps:%lf", (cv::getTickFrequency() / (double)(fpstimestart - last_fps_time)));
     last_fps_time = fpstimestart;
-
     cnt++;
-    // std::cout << " \"\/thermal_camera \" topic subscibed updated. " << cnt << std::endl;
-
     cv::imshow("result_win", Imageresult);
     cv::waitKey(1);
 
     sensor_msgs::ImagePtr msg = cv_bridge::CvImage(std_msgs::Header(), "mono16", Imageresult).toImageMsg();
-    // sensor_msgs::ImagePtr msg = cv_bridge::CvImage(std_msgs::Header(), "mono8", Imageresult).toImageMsg();
     msg->header.stamp = ros::Time::now();
     pubThermalImage.publish(msg);
-
     delete[] thermalBuffer;
 }
 void OnImage_camera(const ignition::msgs::Image &_msg) {
